@@ -457,3 +457,5 @@ body{font-family:var(--font-b);background:var(--dark);color:var(--white);overflo
   100%{transform:rotate(0) scaleY(1)}
 }
 #parrot-smile{transition:opacity .3s}
+
+#hero-parrot{transform:rotate(-3deg)}
