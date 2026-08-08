@@ -430,3 +430,30 @@ body{font-family:var(--font-b);background:var(--dark);color:var(--white);overflo
 .insta-ph:hover{border-color:rgba(240,101,26,.3)}
 @media(max-width:768px){.insta-grid{grid-template-columns:repeat(2,1fr)}}
 @keyframes parrot-f{0%,100%{transform:translateY(0) rotate(-2.5deg)}50%{transform:translateY(-26px) rotate(2.5deg)}}
+
+@keyframes wing-wave-hello {
+  0%{transform:rotate(0)}
+  25%{transform:rotate(-45deg) scaleY(.8)}
+  50%{transform:rotate(-20deg) scaleY(1.1)}
+  75%{transform:rotate(-50deg) scaleY(.85)}
+  100%{transform:rotate(0)}
+}
+
+@keyframes wing-hello {
+  0%{transform:rotate(0) scaleY(1)}
+  30%{transform:rotate(-55deg) scaleY(.82) translateY(-8px)}
+  60%{transform:rotate(-35deg) scaleY(.9) translateY(-5px)}
+  80%{transform:rotate(-50deg) scaleY(.84) translateY(-7px)}
+  100%{transform:rotate(0) scaleY(1)}
+}
+
+@keyframes wing-wave-once {
+  0%{transform:rotate(0) scaleY(1)}
+  20%{transform:rotate(-50deg) scaleY(.85)}
+  35%{transform:rotate(-25deg) scaleY(.95)}
+  50%{transform:rotate(-50deg) scaleY(.85)}
+  65%{transform:rotate(-25deg) scaleY(.95)}
+  80%{transform:rotate(-45deg) scaleY(.88)}
+  100%{transform:rotate(0) scaleY(1)}
+}
+#parrot-smile{transition:opacity .3s}

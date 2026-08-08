@@ -93,20 +93,82 @@ function switchBooksTab(tab){
 
 
 
+
+
+
+
+/* PARROT LIVE */
 (function(){
-  var speech=document.getElementById('parrot-speech');
-  var parrot=document.getElementById('hero-parrot');
-  if(!speech||!parrot)return;
-  var phrases=["Привіт! 🦜","Чекаємо тебе! 📚","Hello! 🌍","Cambridge A2! 🏆","Let's speak! 🗣️","Great job! ⭐","Вчи англійську! 🎯"];
-  var talking=false;
-  function speak(){
-    if(talking)return;
-    talking=true;
-    speech.textContent=phrases[Math.floor(Math.random()*phrases.length)];
-    speech.style.opacity='1';
-    setTimeout(function(){speech.style.opacity='0';talking=false;},3000);
-    setTimeout(speak,5000+Math.random()*5000);
+  var parrot = document.getElementById('hero-parrot');
+  if(!parrot) return;
+  var beakUpper = document.getElementById('beak-upper');
+  var beakLower = document.getElementById('beak-lower');
+  var smile = document.getElementById('parrot-smile');
+  var wingR = parrot.querySelector('[style*="wing-r"]');
+
+  var phrases = [
+    "Привіт! Записуйся до нас! 🦜",
+    "Hello! Let's speak English! 🌍",
+    "Cambridge A2 — ти зможеш! 🏆",
+    "Безкоштовний пробний урок! 🎯",
+    "Вчи англійську легко! ⭐",
+    "5 локацій у Харкові! 📍",
+    "300+ щасливих учнів! 😊"
+  ];
+  var idx = 0;
+  var talking = false;
+
+  var speech = document.createElement('div');
+  speech.style.cssText = 'position:absolute;top:0;left:50%;transform:translateX(-50%);background:#1E1E38;border:2px solid #F0651A;border-radius:20px;padding:.55rem 1.2rem;font-size:.85rem;font-weight:700;color:#fff;white-space:nowrap;opacity:0;transition:opacity .4s;z-index:20;pointer-events:none;box-shadow:0 8px 24px rgba(0,0,0,.3)';
+  var wrap = parrot.closest('.hero-bird-wrap') || parrot.parentNode;
+  wrap.style.position = 'relative';
+  wrap.appendChild(speech);
+
+  function waveWing(){
+    if(!wingR) return;
+    wingR.style.animation = 'none';
+    wingR.getBoundingClientRect();
+    wingR.style.animation = 'wing-wave-once 1.2s ease-in-out';
+    setTimeout(function(){
+      wingR.style.animation = 'wing-r 1.25s ease-in-out infinite .12s';
+    }, 1300);
   }
-  parrot.addEventListener('click',speak);
-  setTimeout(speak,2000);
+
+  function talkBeak(duration){
+    var start = performance.now();
+    function frame(now){
+      var t = now - start;
+      if(t > duration){
+        beakUpper.setAttribute('d','M138 140 Q150 150 162 140 Q155 146 150 148 Q145 146 138 140Z');
+        beakLower.setAttribute('d','M143 148 Q150 150 157 148 Q152 156 150 157 Q148 156 143 148Z');
+        return;
+      }
+      var open = (Math.sin(t/110*Math.PI)*0.5+0.5) * 8;
+      beakUpper.setAttribute('d','M138 140 Q150 '+(150-open/2)+' 162 140 Q155 146 150 '+(148-open/3)+' Q145 146 138 140Z');
+      beakLower.setAttribute('d','M143 '+(148+open/2)+' Q150 '+(152+open)+' 157 '+(148+open/2)+' Q152 '+(158+open)+' 150 '+(159+open)+' Q148 '+(158+open)+' 143 '+(148+open/2)+'Z');
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+
+  function speak(){
+    if(talking) return;
+    talking = true;
+    speech.textContent = phrases[idx % phrases.length];
+    idx++;
+    speech.style.opacity = '1';
+    if(smile) smile.style.opacity = '0';
+    waveWing();
+    talkBeak(2600);
+    setTimeout(function(){
+      speech.style.opacity = '0';
+      if(smile) smile.style.opacity = '1';
+      talking = false;
+    }, 3000);
+    setTimeout(speak, 6000);
+  }
+
+  parrot.style.cursor = 'pointer';
+  parrot.addEventListener('click', function(){ if(!talking) speak(); });
+  setTimeout(speak, 2000);
 })();
