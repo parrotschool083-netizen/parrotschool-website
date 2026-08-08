@@ -74,3 +74,10 @@ document.querySelectorAll('a').forEach(function(a){
   }
   draw();
 })();
+
+function switchTab(tab){
+  document.querySelectorAll('.mot-content').forEach(function(el){el.style.display='none';});
+  document.querySelectorAll('.mot-tab').forEach(function(el){el.classList.remove('active');});
+  document.getElementById('tab-'+tab).style.display='block';
+  event.target.classList.add('active');
+}

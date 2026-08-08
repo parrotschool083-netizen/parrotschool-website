@@ -189,22 +189,78 @@
 <!-- MOTIVATION -->
 <section class="section mot-sec" id="motivation">
   <div class="container">
-    <div class="reveal"><p class="s-eye">Як ми мотивуємо</p><h2 class="s-title" style="color:var(--dark)">Система мотивації,<br>яка справді працює</h2><p class="s-sub" style="color:rgba(12,12,20,.58)">Бали, досягнення, нагороди. Навчання стає грою.</p></div>
-    <div class="mot-g">
-      <div class="mc reveal d1">
-        <div class="stars" aria-label="5 зірок"><span class="star">⭐</span><span class="star">⭐</span><span class="star">⭐</span><span class="star">⭐</span><span class="star">⭐</span></div>
-        <div class="mc-t">Зоряний прогрес</div>
-        <p class="mc-p">За кожне заняття та активність учень отримує зірки і рухається рівнями вгору.</p>
-        <div class="pb-wrap"><div class="pb-fill" style="--w:76%"></div></div>
+    <div class="reveal">
+      <p class="s-eye">Як ми мотивуємо</p>
+      <h2 class="s-title" style="color:var(--dark)">Система мотивації,<br>яка справді працює</h2>
+      <p class="s-sub" style="color:rgba(12,12,20,.58)">Дві різні системи для молодших та старших. Навчання стає грою.</p>
+    </div>
+
+    <div class="mot-tabs reveal">
+      <button class="mot-tab active" onclick="switchTab('junior')">🐣 Молодша школа</button>
+      <button class="mot-tab" onclick="switchTab('senior')">🎓 Старша школа</button>
+    </div>
+
+    <!-- МОЛОДША -->
+    <div id="tab-junior" class="mot-content">
+      <div class="mot-g">
+        <div class="mc reveal d1">
+          <div style="font-size:2rem;margin-bottom:.75rem">🪙</div>
+          <div class="mc-t">Система балів — каунтер</div>
+          <p class="mc-p">Кожна дитина накопичує бали у своєму особистому каунтері за активність на уроці, домашні завдання та участь у заходах.</p>
+          <div class="pb-wrap" style="margin-top:1rem"><div class="pb-fill" style="--w:80%"></div></div>
+        </div>
+        <div class="mc reveal d2">
+          <div style="font-size:2rem;margin-bottom:.75rem">🎁</div>
+          <div class="mc-t">Магазин призів</div>
+          <p class="mc-p">Накопичені бали можна витратити на реальні призи в шкільному магазині. Канцелярія, іграшки, солодощі — діти самі обирають нагороду.</p>
+        </div>
+        <div class="mc mc-big reveal d3">
+          <div>
+            <div style="font-size:2rem;margin-bottom:.75rem">⭐</div>
+            <div class="mc-t">За що нараховуються бали?</div>
+            <p class="mc-p">Бали нараховуються за активність на уроці, виконання домашнього завдання, участь у конкурсах та святкових заходах школи.</p>
+          </div>
+          <div class="mot-mini-g">
+            <div class="mot-mini" style="background:rgba(240,101,26,.08)"><span class="mot-mini-ico">✏️</span><div class="mot-mini-t">Домашнє завдання</div></div>
+            <div class="mot-mini" style="background:rgba(18,184,160,.08)"><span class="mot-mini-ico">🙋</span><div class="mot-mini-t">Активність на уроці</div></div>
+            <div class="mot-mini" style="background:rgba(255,212,59,.08)"><span class="mot-mini-ico">🎭</span><div class="mot-mini-t">Участь у заходах</div></div>
+            <div class="mot-mini" style="background:rgba(240,101,26,.08)"><span class="mot-mini-ico">🏆</span><div class="mot-mini-t">Конкурси</div></div>
+          </div>
+        </div>
       </div>
-      <div class="mc reveal d2"><div style="margin-bottom:.75rem"><svg class="aico-svg" width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g style="animation:ico-bob 2s ease-in-out infinite"><circle cx="24" cy="32" r="14" fill="#FFD43B"/><circle cx="24" cy="32" r="10" fill="#F0651A" opacity=".3"/><text x="24" y="37" text-anchor="middle" font-size="12" font-weight="900" font-family="sans-serif" fill="white">1</text></g><path d="M18 4l6 16 6-16" stroke="#FFD43B" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="mc-t">Бейджі та досягнення</div><p class="mc-p">Унікальні бейджі за кожен рівень, особливий успіх або перемогу в конкурсі.</p></div>
-      <div class="mc mc-big reveal d3">
-        <div><div style="margin-bottom:.75rem"><svg class="aico-svg" width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g style="animation:ico-bob 2.5s ease-in-out infinite"><rect x="4" y="18" width="40" height="26" rx="4" fill="#F0651A"/><rect x="4" y="18" width="40" height="10" rx="4" fill="#FF8A40"/><rect x="20" y="18" width="8" height="26" fill="#FFD43B" opacity=".7"/><path d="M24 18c0-8-8-8-8-4s8 4 8 4s0 0 8-4s-8-4-8 4" fill="#FFD43B" opacity=".9"/></g></svg></div><div class="mc-t">Реальні нагороди</div><p class="mc-p">Накопичені бали обмінюй на нагороди: безкоштовний урок, подарунок від школи або знижку.</p></div>
-        <div class="mot-mini-g">
-          <div class="mot-mini" style="background:rgba(240,101,26,.08)"><span class="mot-mini-ico"><svg class="aico-svg" width="36" height="36" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="none" stroke="#F0651A" stroke-width="3"/><circle cx="24" cy="24" r="13" fill="none" stroke="#F0651A" stroke-width="3" opacity=".6"/><circle cx="24" cy="24" r="6" fill="#F0651A" style="animation:ico-pulse-scale 2s ease-in-out infinite"/></svg></span><div class="mot-mini-t">Щотижневі цілі</div></div>
-          <div class="mot-mini" style="background:rgba(18,184,160,.08)"><span class="mot-mini-ico"><svg class="aico-svg" width="36" height="36" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 4h28v16a14 14 0 01-28 0V4z" fill="#FFD43B" style="animation:ico-bob 2s ease-in-out infinite"/><rect x="17" y="35" width="14" height="4" rx="2" fill="#FFD43B"/><rect x="12" y="39" width="24" height="5" rx="2.5" fill="#F0651A"/></svg></span><div class="mot-mini-t">Місячний рейтинг</div></div>
-          <div class="mot-mini" style="background:rgba(255,212,59,.08)"><span class="mot-mini-ico"><svg class="aico-svg" width="36" height="36" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="6" y="30" width="8" height="14" rx="2" fill="#12B8A0" style="animation:ico-bob 2s ease-in-out infinite .1s"/><rect x="20" y="18" width="8" height="26" rx="2" fill="#F0651A" style="animation:ico-bob 2s ease-in-out infinite .3s"/><rect x="34" y="8" width="8" height="36" rx="2" fill="#FFD43B" style="animation:ico-bob 2s ease-in-out infinite .5s"/></svg></span><div class="mot-mini-t">Батьки онлайн</div></div>
-          <div class="mot-mini" style="background:rgba(240,101,26,.08)"><span class="mot-mini-ico"><svg class="aico-svg" width="36" height="36" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M24 4l5.5 11 12 1.8-8.7 8.5 2 12L24 31.5l-10.8 5.8 2-12L6.5 16.8l12-1.8z" fill="#FFD43B" style="animation:ico-glow-o 2s ease-in-out infinite"/></svg></span><div class="mot-mini-t">Учень місяця</div></div>
+    </div>
+
+    <!-- СТАРША -->
+    <div id="tab-senior" class="mot-content" style="display:none">
+      <div class="mot-g">
+        <div class="mc reveal d1">
+          <div class="stars" aria-label="5 зірок"><span class="star">⭐</span><span class="star">⭐</span><span class="star">⭐</span><span class="star">⭐</span><span class="star">⭐</span></div>
+          <div class="mc-t">Оцінки в Telegram боті</div>
+          <p class="mc-p">Учні отримують оцінки від 1 до 12 за різні формати роботи. Батьки бачать оцінки в реальному часі через Telegram бот.</p>
+          <div class="pb-wrap"><div class="pb-fill" style="--w:76%"></div></div>
+        </div>
+        <div class="mc reveal d2">
+          <div style="font-size:2rem;margin-bottom:.75rem">🎟️</div>
+          <div class="mc-t">Homework Free Pass</div>
+          <p class="mc-p">Учні із середнім балом <strong>10 і вище</strong> щомісяця отримують картку Homework Free Pass — звільнення від одного домашнього завдання на власний розсуд.</p>
+        </div>
+        <div class="mc reveal d3">
+          <div style="font-size:2rem;margin-bottom:.75rem">🎬</div>
+          <div class="mc-t">Нагорода за відмінність</div>
+          <p class="mc-p">Три оцінки "12" поспіль — і учень отримує безкоштовний похід у кінотеатр або батутний центр разом із викладачем!</p>
+        </div>
+        <div class="mc mc-big reveal d1">
+          <div>
+            <div style="font-size:2rem;margin-bottom:.75rem">📊</div>
+            <div class="mc-t">Топ 10 щомісяця</div>
+            <p class="mc-p">Кожен місяць усі учні бачать рейтинг топ-10 за середнім балом. Здорова конкуренція мотивує краще за будь-які нагадування.</p>
+          </div>
+          <div class="mot-mini-g">
+            <div class="mot-mini" style="background:rgba(240,101,26,.08)"><span class="mot-mini-ico">🎬</span><div class="mot-mini-t" style="color:var(--dark)">3×"12" = кіно</div></div>
+            <div class="mot-mini" style="background:rgba(18,184,160,.08)"><span class="mot-mini-ico">📝</span><div class="mot-mini-t" style="color:var(--dark)">3×"1" = тест</div></div>
+            <div class="mot-mini" style="background:rgba(255,212,59,.08)"><span class="mot-mini-ico">🏅</span><div class="mot-mini-t" style="color:var(--dark)">Топ 10</div></div>
+            <div class="mot-mini" style="background:rgba(240,101,26,.08)"><span class="mot-mini-ico">🎟️</span><div class="mot-mini-t" style="color:var(--dark)">Free Pass</div></div>
+          </div>
         </div>
       </div>
     </div>
