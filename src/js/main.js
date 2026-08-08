@@ -81,3 +81,10 @@ function switchTab(tab){
   document.getElementById('tab-'+tab).style.display='block';
   event.target.classList.add('active');
 }
+
+function switchBooksTab(tab){
+  document.getElementById('books-junior').style.display=tab==='junior'?'block':'none';
+  document.getElementById('books-senior').style.display=tab==='senior'?'block':'none';
+  document.querySelectorAll('.books-tabs .mot-tab').forEach(function(el){el.classList.remove('active');});
+  event.target.classList.add('active');
+}
