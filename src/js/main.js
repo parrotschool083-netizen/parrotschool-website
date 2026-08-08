@@ -88,3 +88,328 @@ function switchBooksTab(tab){
   document.querySelectorAll('.books-tabs .mot-tab').forEach(function(el){el.classList.remove('active');});
   event.target.classList.add('active');
 }
+
+/* ═══ PARROT CANVAS CHARACTER ═══ */
+(function(){
+  var canvas = document.getElementById('parrot-canvas');
+  var speech = document.getElementById('parrot-speech');
+  if(!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var W = canvas.width, H = canvas.height;
+
+  var phrases = [
+    "Привіт! 🦜","Чекаємо тебе! 📚","Hello! 🌍",
+    "Cambridge A2! 🏆","Let's speak! 🗣️","Homework? ✅",
+    "Great job! ⭐","See you! ✈️","Вчи англійську! 🎯"
+  ];
+
+  /* STATE */
+  var x = W/2, y = H-100;
+  var dir = 1;         /* 1=right -1=left */
+  var speed = 1.4;
+  var maxX = W-80, minX = 80;
+  var t = 0;
+
+  /* ANIMATION STATE */
+  var wingAngle = 0;
+  var bodyBob = 0;
+  var headBob = 0;
+  var eyeBlink = 0;
+  var beakOpen = 0;
+  var walkCycle = 0;
+
+  /* TALK STATE */
+  var talking = false;
+  var talkTimer = 0;
+  var wingRaised = false;
+  var wingRaiseAngle = 0;
+
+  function startTalk(){
+    if(talking) return;
+    talking = true;
+    talkTimer = 180;
+    wingRaised = true;
+    var p = phrases[Math.floor(Math.random()*phrases.length)];
+    speech.textContent = p;
+    speech.style.opacity = '1';
+    setTimeout(function(){
+      speech.style.opacity = '0';
+    }, 2800);
+    setTimeout(function(){
+      talking = false;
+      wingRaised = false;
+    }, 3200);
+    /* Next talk */
+    setTimeout(startTalk, 4000 + Math.random()*5000);
+  }
+
+  canvas.addEventListener('click', startTalk);
+  setTimeout(startTalk, 2000);
+
+  /* DRAW FEATHER BODY */
+  function drawBody(flip){
+    ctx.save();
+    ctx.scale(flip, 1);
+
+    /* SHADOW */
+    ctx.beginPath();
+    ctx.ellipse(0, 95, 55, 12, 0, 0, Math.PI*2);
+    ctx.fillStyle = 'rgba(0,0,0,0.18)';
+    ctx.fill();
+
+    /* TAIL */
+    ctx.save();
+    ctx.rotate(Math.sin(t*0.8)*0.08);
+    ctx.beginPath();
+    ctx.ellipse(10, 70, 18, 32, 0.3, 0, Math.PI*2);
+    ctx.fillStyle = '#2d7a2d';
+    ctx.fill();
+    ctx.beginPath();
+    ctx.ellipse(0, 75, 14, 28, 0, 0, Math.PI*2);
+    ctx.fillStyle = '#3a9a3a';
+    ctx.fill();
+    ctx.beginPath();
+    ctx.ellipse(-12, 70, 16, 30, -0.3, 0, Math.PI*2);
+    ctx.fillStyle = '#2d7a2d';
+    ctx.fill();
+    ctx.restore();
+
+    /* FEET */
+    var legBob = talking ? 0 : Math.sin(walkCycle)*8;
+    /* left leg */
+    ctx.beginPath();
+    ctx.moveTo(-14, 78);
+    ctx.lineTo(-20+legBob*0.3, 95);
+    ctx.strokeStyle='#7a5c12';ctx.lineWidth=5;ctx.lineCap='round';ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(-20+legBob*0.3,95);ctx.lineTo(-32+legBob*0.3,98);
+    ctx.moveTo(-20+legBob*0.3,95);ctx.lineTo(-18+legBob*0.3,100);
+    ctx.moveTo(-20+legBob*0.3,95);ctx.lineTo(-10+legBob*0.3,97);
+    ctx.strokeStyle='#5a3c08';ctx.lineWidth=4;ctx.stroke();
+    /* right leg */
+    ctx.beginPath();
+    ctx.moveTo(14, 78);
+    ctx.lineTo(20-legBob*0.3, 95);
+    ctx.strokeStyle='#7a5c12';ctx.lineWidth=5;ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(20-legBob*0.3,95);ctx.lineTo(32-legBob*0.3,98);
+    ctx.moveTo(20-legBob*0.3,95);ctx.lineTo(18-legBob*0.3,100);
+    ctx.moveTo(20-legBob*0.3,95);ctx.lineTo(10-legBob*0.3,97);
+    ctx.strokeStyle='#5a3c08';ctx.lineWidth=4;ctx.stroke();
+
+    /* WING LEFT (back) */
+    var wL = talking && wingRaised ? -wingRaiseAngle : -Math.sin(t*4)*18;
+    ctx.save();
+    ctx.translate(-38, 10);
+    ctx.rotate(wL * Math.PI/180);
+    ctx.beginPath();
+    ctx.ellipse(0, 0, 18, 42, -0.2, 0, Math.PI*2);
+    ctx.fillStyle = '#2a6e2a';
+    ctx.fill();
+    /* feather lines */
+    for(var i=0;i<5;i++){
+      ctx.beginPath();
+      ctx.moveTo(-12+i*5,-10);ctx.lineTo(-14+i*5,20);
+      ctx.strokeStyle='rgba(0,80,0,0.25)';ctx.lineWidth=1.5;ctx.stroke();
+    }
+    ctx.restore();
+
+    /* BODY */
+    ctx.beginPath();
+    ctx.ellipse(0, 20, 46, 58, 0, 0, Math.PI*2);
+    ctx.fillStyle = '#f5f5f0';
+    ctx.fill();
+    /* body feathers */
+    for(var row=0;row<4;row++){
+      for(var col=0;col<3;col++){
+        ctx.beginPath();
+        ctx.ellipse(-20+col*20, -10+row*20, 12, 14, 0, 0, Math.PI*2);
+        ctx.fillStyle = row===0?'#e8e8e0':'#f0f0ea';
+        ctx.fill();
+        ctx.strokeStyle='rgba(0,0,0,0.07)';ctx.lineWidth=1;ctx.stroke();
+      }
+    }
+
+    /* GREEN BACK */
+    ctx.save();
+    ctx.globalCompositeOperation='destination-over';
+    ctx.beginPath();
+    ctx.ellipse(8, 15, 44, 55, 0.15, 0, Math.PI*2);
+    ctx.fillStyle='#4aaa4a';
+    ctx.fill();
+    ctx.restore();
+
+    /* WING RIGHT (front) - raises when talking */
+    var wR = talking && wingRaised ? wingRaiseAngle : Math.sin(t*4)*18;
+    ctx.save();
+    ctx.translate(38, 10);
+    ctx.rotate(wR * Math.PI/180);
+    ctx.beginPath();
+    ctx.ellipse(0, 0, 18, 42, 0.2, 0, Math.PI*2);
+    ctx.fillStyle='#3a8a3a';
+    ctx.fill();
+    for(var i=0;i<5;i++){
+      ctx.beginPath();
+      ctx.moveTo(-10+i*4,-10);ctx.lineTo(-12+i*4,20);
+      ctx.strokeStyle='rgba(0,80,0,0.25)';ctx.lineWidth=1.5;ctx.stroke();
+    }
+    /* orange shoulder patch */
+    ctx.beginPath();
+    ctx.ellipse(-4, -20, 10, 10, 0, 0, Math.PI*2);
+    ctx.fillStyle='#F0651A';
+    ctx.fill();
+    ctx.restore();
+
+    /* HEAD */
+    ctx.save();
+    ctx.translate(0, -42+headBob);
+    ctx.rotate(Math.sin(t*1.5)*0.05);
+
+    /* HEAD BASE */
+    ctx.beginPath();
+    ctx.ellipse(0, 0, 38, 40, 0, 0, Math.PI*2);
+    ctx.fillStyle='#d4742a';
+    ctx.fill();
+    /* head feathers */
+    ctx.beginPath();
+    ctx.ellipse(-8,-8,22,28,-.1,0,Math.PI*2);
+    ctx.fillStyle='#e8823a';ctx.fill();
+    ctx.beginPath();
+    ctx.ellipse(8,-8,22,28,.1,0,Math.PI*2);
+    ctx.fillStyle='#cc6820';ctx.fill();
+    /* crown green patch */
+    ctx.beginPath();
+    ctx.ellipse(0,-22,18,14,0,0,Math.PI*2);
+    ctx.fillStyle='#4aaa4a';ctx.fill();
+
+    /* EYE WHITE */
+    ctx.beginPath();
+    ctx.ellipse(16, -4, 13, 13, 0, 0, Math.PI*2);
+    ctx.fillStyle='white';ctx.fill();
+    ctx.strokeStyle='rgba(0,0,0,0.15)';ctx.lineWidth=1;ctx.stroke();
+    /* iris */
+    ctx.beginPath();
+    ctx.ellipse(16,-4,8,8,0,0,Math.PI*2);
+    ctx.fillStyle='#2d5a1a';ctx.fill();
+    /* pupil */
+    ctx.beginPath();
+    ctx.ellipse(16,-4,5,5,0,0,Math.PI*2);
+    ctx.fillStyle='#0a0a0a';ctx.fill();
+    /* shine */
+    ctx.beginPath();
+    ctx.ellipse(19,-7,2.5,2.5,0,0,Math.PI*2);
+    ctx.fillStyle='white';ctx.fill();
+    ctx.beginPath();
+    ctx.ellipse(14,-1,1.2,1.2,0,0,Math.PI*2);
+    ctx.fillStyle='rgba(255,255,255,0.6)';ctx.fill();
+    /* BLINK */
+    if(eyeBlink > 0){
+      ctx.beginPath();
+      ctx.ellipse(16,-4,13,13*eyeBlink,0,0,Math.PI*2);
+      ctx.fillStyle='#d4742a';ctx.fill();
+    }
+
+    /* BEAK */
+    ctx.save();
+    ctx.translate(-2,12);
+    /* upper beak */
+    ctx.beginPath();
+    ctx.moveTo(-12,-2);
+    ctx.quadraticCurveTo(0,-8,12,-2);
+    ctx.quadraticCurveTo(4,14,0,16);
+    ctx.quadraticCurveTo(-4,14,-12,-2);
+    ctx.fillStyle='#8a8070';ctx.fill();
+    /* lower beak - opens when talking */
+    var bOpen = talking ? beakOpen*14 : 0;
+    ctx.beginPath();
+    ctx.moveTo(-8,4);
+    ctx.quadraticCurveTo(0,2+bOpen,8,4);
+    ctx.quadraticCurveTo(2,12+bOpen,0,14+bOpen);
+    ctx.quadraticCurveTo(-2,12+bOpen,-8,4);
+    ctx.fillStyle='#6a6060';ctx.fill();
+    /* mouth interior */
+    if(bOpen>2){
+      ctx.beginPath();
+      ctx.moveTo(-6,5);ctx.quadraticCurveTo(0,4+bOpen,6,5);
+      ctx.quadraticCurveTo(2,10+bOpen,0,12+bOpen);
+      ctx.quadraticCurveTo(-2,10+bOpen,-6,5);
+      ctx.fillStyle='#8b1a1a';ctx.fill();
+    }
+    ctx.restore();
+
+    /* CHEEK patches */
+    ctx.beginPath();
+    ctx.ellipse(-14, 6, 7, 5, -0.3, 0, Math.PI*2);
+    ctx.fillStyle='rgba(255,140,80,0.45)';ctx.fill();
+
+    ctx.restore(); /* head */
+    ctx.restore(); /* flip */
+  }
+
+  /* BLINK timer */
+  var nextBlink = 120 + Math.random()*180;
+  var blinkT = 0;
+  var blinking = false;
+
+  function tick(){
+    t += 0.022;
+    walkCycle += talking ? 0 : 0.18;
+
+    /* walk */
+    if(!talking){
+      x += dir * speed;
+      if(x > maxX){ dir=-1; }
+      if(x < minX){ dir=1; }
+    }
+
+    /* body bob */
+    bodyBob = talking ? 0 : Math.sin(walkCycle)*5;
+    headBob = Math.sin(t*2)*3;
+
+    /* blink */
+    nextBlink--;
+    if(nextBlink <= 0 && !blinking){
+      blinking = true; blinkT = 0;
+      nextBlink = 120 + Math.random()*200;
+    }
+    if(blinking){
+      blinkT += 0.18;
+      eyeBlink = blinkT < 1 ? blinkT : Math.max(0, 2-blinkT);
+      if(blinkT > 2){ blinking=false; eyeBlink=0; }
+    }
+
+    /* beak */
+    if(talking){
+      beakOpen = (Math.sin(t*12)*0.5+0.5);
+    } else {
+      beakOpen = 0;
+    }
+
+    /* wing raise */
+    if(wingRaised){
+      wingRaiseAngle = Math.min(wingRaiseAngle+4, 60);
+    } else {
+      wingRaiseAngle = Math.max(wingRaiseAngle-4, 0);
+    }
+
+    /* DRAW */
+    ctx.clearRect(0,0,W,H);
+
+    var by = y + bodyBob;
+    ctx.save();
+    ctx.translate(x, by);
+
+    /* 3D tilt based on direction */
+    ctx.save();
+    if(!talking){
+      ctx.transform(1, 0, dir*0.06, 1, 0, 0);
+    }
+    drawBody(dir);
+    ctx.restore();
+    ctx.restore();
+
+    requestAnimationFrame(tick);
+  }
+
+  tick();
+})();
