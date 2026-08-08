@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <circle cx="32" cy="32" r="32" fill="#0C0C14"/>
+  <!-- Хвіст -->
+  <ellipse cx="22" cy="50" rx="6" ry="14" fill="#12B8A0" transform="rotate(-20 22 50)"/>
+  <ellipse cx="32" cy="53" rx="5" ry="15" fill="#1DD9C3" transform="rotate(0 32 53)"/>
+  <ellipse cx="42" cy="50" rx="6" ry="13" fill="#12B8A0" transform="rotate(20 42 50)"/>
+  <!-- Тіло -->
+  <ellipse cx="32" cy="36" rx="16" ry="18" fill="#F0651A"/>
+  <ellipse cx="32" cy="39" rx="10" ry="12" fill="#FF8A40"/>
+  <!-- Крило ліве -->
+  <ellipse cx="16" cy="34" rx="7" ry="16" fill="#c44700" transform="rotate(-18 16 34)"/>
+  <ellipse cx="14" cy="37" rx="5" ry="12" fill="#12B8A0" transform="rotate(-20 14 37)"/>
+  <!-- Крило праве -->
+  <ellipse cx="48" cy="34" rx="7" ry="16" fill="#c44700" transform="rotate(18 48 34)"/>
+  <ellipse cx="50" cy="37" rx="5" ry="12" fill="#12B8A0" transform="rotate(20 50 37)"/>
+  <!-- Голова -->
+  <circle cx="32" cy="22" r="15" fill="#F0651A"/>
+  <ellipse cx="30" cy="14" rx="9" ry="7" fill="#c44700" opacity=".35"/>
+  <!-- Чуб -->
+  <ellipse cx="24" cy="9" rx="3" ry="7" fill="#12B8A0" transform="rotate(-18 24 9)"/>
+  <ellipse cx="32" cy="7" rx="3" ry="8" fill="#3DDAC6" transform="rotate(-3 32 7)"/>
+  <ellipse cx="40" cy="9" rx="3" ry="7" fill="#12B8A0" transform="rotate(18 40 9)"/>
+  <!-- Щічки -->
+  <circle cx="39" cy="26" r="5" fill="#FFD43B" opacity=".7"/>
+  <circle cx="25" cy="26" r="5" fill="#FFD43B" opacity=".6"/>
+  <!-- Оченько -->
+  <circle cx="37" cy="20" r="5" fill="white"/>
+  <circle cx="37" cy="20" r="3.5" fill="#0C0C14"/>
+  <circle cx="38.5" cy="18.5" r="1.5" fill="white"/>
+  <!-- Дзьоб -->
+  <path d="M26 30 Q32 38 38 30 Q34 34 32 35 Q30 34 26 30Z" fill="#FFD43B"/>
+</svg>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parrot Camp 2026 — Дитячий англомовний табір | Харків</title>
+<meta name="description" content="Parrot Camp — дитячий англомовний табір від Parrot School. Дві зміни: 28.06–05.07 та 02.08–09.08. Повністю англомовне середовище, пригоди, нові друзі.">
+<link rel="canonical" href="https://parrotschool.com.ua/tabir">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="shortcut icon" href="../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../src/css/styles.css">
+<style>
+.tabir-hero{min-height:100vh;background:linear-gradient(160deg,#0a1f0a 0%,#1a3d1a 40%,#0d2a0d 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;text-align:center;padding:6rem 2rem 4rem}
+.tabir-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 20% 50%,rgba(18,184,100,.12) 0%,transparent 60%),radial-gradient(circle at 80% 30%,rgba(240,101,26,.1) 0%,transparent 50%)}
+.forest-deco{position:absolute;bottom:0;left:0;right:0;height:200px;background:linear-gradient(0deg,rgba(10,31,10,.9) 0%,transparent 100%);pointer-events:none}
+.tree{position:absolute;bottom:0;font-size:5rem;opacity:.25;animation:tree-sway ease-in-out infinite}
+.t1{left:3%;animation-duration:4s}
+.t2{left:10%;font-size:7rem;animation-duration:5s;animation-delay:.5s}
+.t3{left:18%;animation-duration:3.5s;animation-delay:1s}
+.t4{right:5%;animation-duration:4.5s;animation-delay:.3s}
+.t5{right:12%;font-size:7rem;animation-duration:5.5s;animation-delay:.8s}
+.t6{right:20%;animation-duration:3.8s;animation-delay:1.2s}
+@keyframes tree-sway{0%,100%{transform:rotate(0) translateY(0)}50%{transform:rotate(2deg) translateY(-4px)}}
+.tabir-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:50px;padding:.4rem 1.1rem;font-size:.75rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;margin-bottom:2rem;animation:fade-up .8s ease both}
+.tabir-title{font-family:var(--font-d);font-weight:900;font-size:clamp(3.5rem,10vw,8rem);line-height:.95;letter-spacing:-.04em;margin-bottom:1.5rem;animation:fade-up .8s ease .15s both}
+.tabir-title span{color:var(--orange)}
+.tabir-sub{font-size:1.1rem;color:rgba(255,255,255,.7);max-width:480px;margin:0 auto 3rem;line-height:1.7;animation:fade-up .8s ease .3s both}
+.shifts{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:3rem;animation:fade-up .8s ease .45s both}
+.shift-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:var(--r-lg);padding:1.5rem 2rem;text-align:center;min-width:200px;transition:transform .35s var(--ease),background .3s}
+.shift-card:hover{transform:translateY(-4px);background:rgba(255,255,255,.14)}
+.shift-label{font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.4rem}
+.shift-dates{font-family:var(--font-d);font-size:1.2rem;font-weight:700;margin-bottom:.4rem}
+.shift-spots{display:inline-flex;align-items:center;gap:.35rem;background:rgba(18,184,100,.15);color:#4caf50;border-radius:50px;padding:.2rem .7rem;font-size:.72rem;font-weight:700}
+.shift-spots::before{content:'';width:6px;height:6px;background:#4caf50;border-radius:50%;display:inline-block}
+.tabir-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fade-up .8s ease .6s both}
+
+/* STATS */
+.tabir-stats{background:var(--dark);padding:5rem 2rem}
+.tabir-stats-g{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;max-width:1180px;margin:0 auto}
+.ts-card{background:var(--card);border-radius:var(--r-lg);padding:2rem;text-align:center;border:1px solid rgba(255,255,255,.06);transition:transform .4s var(--ease)}
+.ts-card:hover{transform:translateY(-6px)}
+.ts-num{font-family:var(--font-d);font-size:2.5rem;font-weight:900;color:var(--orange);line-height:1;margin-bottom:.4rem}
+.ts-lbl{font-size:.85rem;color:var(--muted);font-weight:600}
+
+/* ACTIVITIES */
+.activities-sec{background:var(--mid);padding:6rem 2rem}
+.act-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;max-width:1180px;margin:0 auto}
+.act-card{background:var(--card);border-radius:var(--r-lg);padding:2rem;border:1px solid rgba(255,255,255,.06);transition:transform .4s var(--ease),border-color .3s;position:relative;overflow:hidden}
+.act-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--orange),var(--teal))}
+.act-card:hover{transform:translateY(-6px);border-color:rgba(240,101,26,.25)}
+.act-ico{font-size:2.2rem;margin-bottom:1rem;display:block}
+.act-t{font-family:var(--font-d);font-size:.95rem;font-weight:700;margin-bottom:.4rem}
+.act-p{font-size:.85rem;color:var(--muted);line-height:1.6}
+
+/* WHY */
+.why-camp{background:var(--dark);padding:6rem 2rem}
+.why-camp-g{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;max-width:1180px;margin:0 auto}
+.wc2{background:var(--card);border-radius:var(--r-lg);padding:2rem;display:flex;gap:1.5rem;align-items:flex-start;border:1px solid rgba(255,255,255,.06);transition:transform .4s var(--ease)}
+.wc2:hover{transform:translateX(6px)}
+.wc2-ico{width:52px;height:52px;background:rgba(240,101,26,.12);border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0}
+.wc2-t{font-family:var(--font-d);font-size:.95rem;font-weight:700;margin-bottom:.35rem}
+.wc2-p{font-size:.85rem;color:var(--muted);line-height:1.6}
+
+/* PRICING */
+.tabir-price{background:var(--mid);padding:6rem 2rem}
+.price-shifts{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;max-width:800px;margin:0 auto}
+.ps-card{background:var(--card);border-radius:var(--r-xl);padding:2.5rem;border:1px solid rgba(255,255,255,.06);position:relative;transition:transform .4s var(--ease),border-color .3s}
+.ps-card.feat{border-color:var(--orange);background:linear-gradient(135deg,rgba(240,101,26,.08),var(--card))}
+.ps-card:hover{transform:translateY(-6px)}
+.ps-shift{font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);margin-bottom:.5rem}
+.ps-dates{font-family:var(--font-d);font-size:1.1rem;font-weight:700;margin-bottom:1.2rem}
+.ps-price{font-family:var(--font-d);font-size:2.8rem;font-weight:900;color:var(--orange);line-height:1;margin-bottom:.2rem}
+.ps-incl{font-size:.78rem;color:var(--muted);margin-bottom:1.5rem}
+.ps-feats{list-style:none;display:flex;flex-direction:column;gap:.6rem;margin-bottom:2rem}
+.ps-feats li{font-size:.88rem;display:flex;align-items:center;gap:.5rem}
+.ps-feats li::before{content:'✓';color:var(--teal);font-weight:800}
+
+/* Gallery placeholders */
+.gallery-sec{background:var(--dark);padding:6rem 2rem}
+.gallery-g{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;max-width:1180px;margin:0 auto}
+.gallery-g .big{grid-column:span 2;grid-row:span 2}
+.gal-ph{background:var(--card);border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.5rem;border:2px dashed rgba(255,255,255,.1);min-height:180px;color:var(--muted);font-size:.8rem;font-weight:600;transition:border-color .3s}
+.gal-ph:hover{border-color:rgba(240,101,26,.4)}
+.big.gal-ph{min-height:380px}
+
+@media(max-width:768px){
+  .tabir-title{font-size:clamp(3rem,14vw,5rem)}
+  .shifts{flex-direction:column;align-items:center}
+  .tabir-stats-g{grid-template-columns:1fr 1fr}
+  .act-g{grid-template-columns:1fr}
+  .why-camp-g{grid-template-columns:1fr}
+  .price-shifts{grid-template-columns:1fr}
+  .gallery-g{grid-template-columns:1fr 1fr}
+  .gallery-g .big{grid-column:span 2}
+}
+</style>
+</head>
+<body>
+<a href="../index.html#main-content" class="skip-link">Перейти до основного контенту</a>
+
+<nav class="nav" role="navigation" aria-label="Навігація">
+  <a href="../index.html" class="nav-logo">🦜 <span>Parrot</span>School</a>
+  <ul class="nav-links" id="nav-links" role="list">
+    <li><a href="../index.html#about">Про нас</a></li>
+    <li><a href="../index.html#locations">Локації</a></li>
+    <li><a href="../index.html#cambridge">Cambridge</a></li>
+    <li><a href="vykladachi.html">Викладачі</a></li>
+    <li><a href="#pricing">Ціни</a></li>
+    <li><a href="https://t.me/SchoolParrot_bot" target="_blank" rel="noopener noreferrer">Telegram</a></li>
+    <li><a href="#pricing" class="nav-cta">Записатись</a></li>
+  </ul>
+  <button class="nav-burger" id="nav-burger" type="button" aria-label="Відкрити меню" aria-expanded="false" aria-controls="nav-links">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<main id="main-content">
+
+<section class="tabir-hero">
+  <div class="tree t1" aria-hidden="true">🌲</div>
+  <div class="tree t2" aria-hidden="true">🌲</div>
+  <div class="tree t3" aria-hidden="true">🌲</div>
+  <div class="tree t4" aria-hidden="true">🌲</div>
+  <div class="tree t5" aria-hidden="true">🌲</div>
+  <div class="tree t6" aria-hidden="true">🌲</div>
+  <div class="forest-deco" aria-hidden="true"></div>
+  <div>
+    <div class="tabir-badge">🏕️ Parrot School · Літо 2026</div>
+    <h1 class="tabir-title">PARROT<br><span>CAMP</span></h1>
+    <p class="tabir-sub">Дитячий англомовний табір. 10 днів повного занурення в мову, природу та пригоди.</p>
+    <div class="shifts">
+      <div class="shift-card">
+        <div class="shift-label">Зміна 1</div>
+        <div class="shift-dates">28.06 – 05.07</div>
+        <div class="shift-spots">Є місця</div>
+      </div>
+      <div class="shift-card">
+        <div class="shift-label">Зміна 2</div>
+        <div class="shift-dates">02.08 – 09.08</div>
+        <div class="shift-spots">Є місця</div>
+      </div>
+    </div>
+    <div class="tabir-actions">
+      <a href="https://t.me/parrot_school" class="btn btn-primary" target="_blank" rel="noopener noreferrer">🎯 Записатись у табір</a>
+      <a href="#program" class="btn btn-ghost">Програма →</a>
+    </div>
+  </div>
+</section>
+
+<section class="tabir-stats">
+  <div class="tabir-stats-g">
+    <div class="ts-card reveal d1"><div class="ts-num">10</div><div class="ts-lbl">днів табору</div></div>
+    <div class="ts-card reveal d2"><div class="ts-num">6–16</div><div class="ts-lbl">вік учасників</div></div>
+    <div class="ts-card reveal d3"><div class="ts-num">100%</div><div class="ts-lbl">англійська мова</div></div>
+    <div class="ts-card reveal d4"><div class="ts-num">15</div><div class="ts-lbl">учнів на зміну</div></div>
+  </div>
+</section>
+
+<section class="activities-sec" id="program">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:3rem">
+      <p class="s-eye">Що на вас чекає</p>
+      <h2 class="s-title">Програма табору</h2>
+      <p class="s-sub">Кожен день — нові пригоди. Все англійською, все запам'ятається.</p>
+    </div>
+    <div class="act-g">
+      <div class="act-card reveal d1"><span class="act-ico">🗣️</span><div class="act-t">English Lessons</div><p class="act-p">Щоденні заняття у малих групах з сертифікованим викладачем. Прокачуємо всі 4 skills.</p></div>
+      <div class="act-card reveal d2"><span class="act-ico">🏄</span><div class="act-t">Спорт та активності</div><p class="act-p">Волейбол, командні ігри, походи та квести. Все з англомовним коментарем і правилами.</p></div>
+      <div class="act-card reveal d3"><span class="act-ico">🎨</span><div class="act-t">Творчі майстерні</div><p class="act-p">Art, Drama, Music workshops. Учні створюють проєкти та презентують їх перед командою.</p></div>
+      <div class="act-card reveal d1"><span class="act-ico">🎬</span><div class="act-t">Нічне кіно</div><p class="act-p">Вечірні перегляди фільмів англійською. Обговорення, дискусії, нові vocabulary words.</p></div>
+      <div class="act-card reveal d2"><span class="act-ico">🔥</span><div class="act-t">Вогнище та вечори</div><p class="act-p">Storytelling, talent shows та camp traditions. Незабутня атмосфера в колі нових друзів.</p></div>
+      <div class="act-card reveal d3"><span class="act-ico">🏆</span><div class="act-t">Фінальний захід</div><p class="act-p">Останній день — ceremony з сертифікатами, виступами та святковим обідом.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="why-camp">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:3rem">
+      <p class="s-eye">Наші переваги</p>
+      <h2 class="s-title">Чому Parrot Camp?</h2>
+    </div>
+    <div class="why-camp-g">
+      <div class="wc2 reveal d1"><div class="wc2-ico">🌍</div><div><div class="wc2-t">Повне занурення в мову</div><p class="wc2-p">Тільки англійська — від підйому до відбою. За 10 днів мозок перемикається на новий режим.</p></div></div>
+      <div class="wc2 reveal d2"><div class="wc2-ico">👩‍🏫</div><div><div class="wc2-t">Certified викладачі 24/7</div><p class="wc2-p">Наші педагоги живуть разом з дітьми в таборі. Навчання не зупиняється ні на хвилину.</p></div></div>
+      <div class="wc2 reveal d1"><div class="wc2-ico">🛡️</div><div><div class="wc2-t">Безпека та комфорт</div><p class="wc2-p">Закрита територія, медпункт, харчування 4 рази на день. Батьки завжди в курсі через Telegram.</p></div></div>
+      <div class="wc2 reveal d2"><div class="wc2-ico">📈</div><div><div class="wc2-t">Реальний результат</div><p class="wc2-p">Після табору учні вільніше говорять, менше бояться помилок і отримують +1 рівень впевненості.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery-sec">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:3rem">
+      <p class="s-eye">Фотозвіт</p>
+      <h2 class="s-title">Parrot Camp 2025</h2>
+      <p class="s-sub">Фото з минулого сезону. Цього року буде ще крутіше!</p>
+    </div>
+    <div class="gallery-g reveal">
+      <div class="gal-ph big"><span style="font-size:2rem">📸</span><span>Фото буде тут</span></div>
+      <div class="gal-ph"><span style="font-size:1.5rem">📸</span><span>Фото</span></div>
+      <div class="gal-ph"><span style="font-size:1.5rem">📸</span><span>Фото</span></div>
+      <div class="gal-ph"><span style="font-size:1.5rem">📸</span><span>Фото</span></div>
+      <div class="gal-ph"><span style="font-size:1.5rem">📸</span><span>Фото</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="tabir-price" id="pricing">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:3rem;text-align:center">
+      <p class="s-eye" style="justify-content:center">Вартість</p>
+      <h2 class="s-title">Обирай свою зміну</h2>
+      <p class="s-sub" style="margin:0 auto">Ранній птах = знижка 10% до 1 квітня.</p>
+    </div>
+    <div class="price-shifts">
+      <div class="ps-card reveal d1">
+        <div class="ps-shift">Зміна 1</div>
+        <div class="ps-dates">28 червня – 5 липня</div>
+        <div class="ps-price">8 500₴</div>
+        <div class="ps-incl">Все включено · 10 днів</div>
+        <ul class="ps-feats">
+          <li>Проживання та харчування</li>
+          <li>Щоденні English lessons</li>
+          <li>Всі активності та майстерні</li>
+          <li>Сертифікат учасника</li>
+          <li>Telegram-звіти для батьків</li>
+        </ul>
+        <a href="https://t.me/parrot_school" class="btn btn-ghost" style="width:100%;justify-content:center;border-color:rgba(255,255,255,.2)" target="_blank" rel="noopener noreferrer">Записатись у зміну 1</a>
+      </div>
+      <div class="ps-card feat reveal d2">
+        <div class="ps-shift">Зміна 2</div>
+        <div class="ps-dates">2 серпня – 9 серпня</div>
+        <div class="ps-price">8 500₴</div>
+        <div class="ps-incl">Все включено · 10 днів</div>
+        <ul class="ps-feats">
+          <li>Проживання та харчування</li>
+          <li>Щоденні English lessons</li>
+          <li>Всі активності та майстерні</li>
+          <li>Сертифікат учасника</li>
+          <li>Telegram-звіти для батьків</li>
+        </ul>
+        <a href="https://t.me/parrot_school" class="btn btn-primary" style="width:100%;justify-content:center" target="_blank" rel="noopener noreferrer">Записатись у зміну 2</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-sec">
+  <div class="container"><div class="reveal">
+    <h2 class="cta-t">Залишились питання?<br>Пишіть — відповімо за 15 хвилин</h2>
+    <p class="cta-s">Команда Parrot School завжди на зв'язку в Telegram.</p>
+    <div class="cta-row">
+      <a href="https://t.me/parrot_school" class="btn btn-white" target="_blank" rel="noopener noreferrer">✈️ Написати в Telegram</a>
+      <a href="../index.html" class="btn btn-ghost" style="border-color:rgba(255,255,255,.4)">← На головну</a>
+    </div>
+  </div></div>
+</section>
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div style="max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem">
+    <a href="../index.html" class="ft-logo" style="text-decoration:none">🦜 <span>Parrot</span>School</a>
+    <div class="ft-copy">© 2026 Parrot School · Харків</div>
+    <div class="ft-made">Розроблено <a href="https://infiniteunion.com.ua" rel="noopener noreferrer" target="_blank">INFINITE UNION</a></div>
+  </div>
+</footer>
+
+<script defer src="../src/js/main.js"></script>
+</body>
+</html>

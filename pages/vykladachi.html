@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Викладачі Parrot School — наша команда | Харків</title>
+<meta name="description" content="Команда Parrot School — сертифіковані викладачі англійської для дітей у Харкові. Cambridge CELTA, TESOL, IELTS.">
+<link rel="canonical" href="https://parrotschool.com.ua/vykladachi">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="shortcut icon" href="../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../src/css/styles.css">
+<style>
+.team-hero{padding:9rem 2rem 5rem;background:var(--dark);position:relative;overflow:hidden;text-align:center}
+.team-hero::before{content:'';position:absolute;width:700px;height:700px;background:radial-gradient(circle,rgba(240,101,26,.12) 0%,transparent 65%);top:-200px;left:50%;transform:translateX(-50%);pointer-events:none}
+.team-hero-title{font-family:var(--font-d);font-weight:900;font-size:clamp(2.5rem,6vw,5rem);letter-spacing:-.04em;line-height:1;margin-bottom:1rem;animation:fade-up .8s ease both}
+.team-hero-sub{font-size:1.05rem;color:var(--muted);max-width:480px;margin:0 auto 3rem;line-height:1.7;animation:fade-up .8s ease .15s both}
+
+/* FILTER */
+.filter-bar{display:flex;gap:.65rem;flex-wrap:wrap;justify-content:center;margin-bottom:4rem;animation:fade-up .8s ease .3s both}
+.filter-pill{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:50px;padding:.45rem 1.1rem;font-size:.78rem;font-weight:700;cursor:pointer;transition:background .2s,border-color .2s,color .2s;color:var(--muted)}
+.filter-pill:hover,.filter-pill.active{background:rgba(240,101,26,.15);border-color:rgba(240,101,26,.4);color:var(--orange)}
+.filter-pill:focus-visible{outline:2px solid var(--orange);outline-offset:2px;border-radius:50px}
+
+/* TEACHER GRID */
+.teachers-page-sec{background:var(--dark);padding:0 2rem 6rem}
+.teach-page-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1180px;margin:0 auto}
+
+/* FLIP CARD */
+.flip-card{height:320px;perspective:900px;cursor:pointer}
+.flip-inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .65s cubic-bezier(.4,0,.2,1)}
+.flip-card:hover .flip-inner,.flip-card:focus-within .flip-inner{transform:rotateY(180deg)}
+.flip-front,.flip-back{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:var(--r-lg);padding:2rem;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.flip-front{background:var(--card);border:1px solid rgba(255,255,255,.07)}
+.flip-back{background:linear-gradient(135deg,rgba(240,101,26,.15),var(--card));border:1px solid rgba(240,101,26,.25);transform:rotateY(180deg);align-items:flex-start;text-align:left}
+.tc-ava-wrap{width:88px;height:88px;border-radius:50%;background:linear-gradient(135deg,var(--orange),#b84400);display:flex;align-items:center;justify-content:center;font-size:2.6rem;margin-bottom:1.2rem;border:3px solid rgba(255,255,255,.15)}
+.tc-ava-wrap.teal{background:linear-gradient(135deg,var(--teal),#0a8070)}
+.tc-ava-wrap.yellow{background:linear-gradient(135deg,#c49000,var(--yellow))}
+.tc-page-name{font-family:var(--font-d);font-size:1rem;font-weight:700;margin-bottom:.3rem}
+.tc-page-role{font-size:.78rem;color:var(--muted);margin-bottom:.75rem}
+.tc-certs{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:center}
+.cert-tag{background:rgba(240,101,26,.12);border:1px solid rgba(240,101,26,.25);border-radius:50px;padding:.22rem .65rem;font-size:.65rem;font-weight:800;color:var(--orange)}
+.back-title{font-family:var(--font-d);font-size:.95rem;font-weight:700;margin-bottom:.75rem;color:var(--white)}
+.back-bio{font-size:.82rem;color:rgba(255,255,255,.7);line-height:1.65;margin-bottom:1rem}
+.back-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.back-tag{background:rgba(18,184,160,.12);border:1px solid rgba(18,184,160,.25);border-radius:50px;padding:.22rem .65rem;font-size:.65rem;font-weight:800;color:var(--teal)}
+
+/* PLACEHOLDER CARDS */
+.soon-card{background:var(--card);border-radius:var(--r-lg);padding:2rem;border:2px dashed rgba(255,255,255,.1);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;height:320px;position:relative;overflow:hidden;transition:border-color .3s}
+.soon-card:hover{border-color:rgba(240,101,26,.3)}
+.soon-card::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,.04) 50%,transparent 100%);animation:shimmer 2.5s ease-in-out infinite;transform:translateX(-100%)}
+@keyframes shimmer{0%{transform:translateX(-100%)}60%,100%{transform:translateX(100%)}}
+.soon-ico{font-size:2rem;margin-bottom:1rem;opacity:.3}
+.soon-label{font-family:var(--font-d);font-size:.82rem;font-weight:700;color:var(--muted);margin-bottom:.3rem}
+.soon-sub{font-size:.72rem;color:rgba(255,255,255,.25)}
+
+/* JOIN CTA */
+.join-sec{background:var(--mid);padding:6rem 2rem}
+.join-inner{max-width:680px;margin:0 auto;background:var(--card);border-radius:var(--r-xl);padding:3.5rem;border:1px solid rgba(255,255,255,.07);text-align:center}
+.join-title{font-family:var(--font-d);font-size:clamp(1.5rem,3vw,2.2rem);font-weight:900;margin-bottom:1rem;letter-spacing:-.025em}
+.join-sub{font-size:.95rem;color:var(--muted);margin-bottom:2.5rem;line-height:1.7;max-width:480px;margin-left:auto;margin-right:auto}
+.join-reqs{display:flex;flex-wrap:wrap;gap:.65rem;justify-content:center;margin-bottom:2.5rem}
+.req-pill{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:50px;padding:.35rem .9rem;font-size:.75rem;font-weight:700;color:rgba(255,255,255,.65)}
+
+@media(max-width:768px){
+  .teach-page-g{grid-template-columns:1fr 1fr}
+  .flip-card,.soon-card{height:280px}
+}
+@media(max-width:480px){
+  .teach-page-g{grid-template-columns:1fr}
+  .flip-card,.soon-card{height:auto;min-height:240px}
+  .flip-inner{min-height:240px}
+}
+</style>
+</head>
+<body>
+<a href="../index.html#main-content" class="skip-link">Перейти до основного контенту</a>
+
+<nav class="nav" role="navigation" aria-label="Навігація">
+  <a href="../index.html" class="nav-logo">🦜 <span>Parrot</span>School</a>
+  <ul class="nav-links" id="nav-links" role="list">
+    <li><a href="../index.html#about">Про нас</a></li>
+    <li><a href="../index.html#locations">Локації</a></li>
+    <li><a href="../index.html#cambridge">Cambridge</a></li>
+    <li><a href="vykladachi.html" style="color:var(--orange)">Викладачі</a></li>
+    <li><a href="tabir.html">Табір</a></li>
+    <li><a href="https://t.me/SchoolParrot_bot" target="_blank" rel="noopener noreferrer">Telegram</a></li>
+    <li><a href="../index.html#pricing" class="nav-cta">Записатись</a></li>
+  </ul>
+  <button class="nav-burger" id="nav-burger" type="button" aria-label="Відкрити меню" aria-expanded="false" aria-controls="nav-links">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<main id="main-content">
+
+<section class="team-hero">
+  <div class="reveal">
+    <p class="s-eye" style="justify-content:center">Naша команда</p>
+    <h1 class="team-hero-title">Викладачі,<br>яким <span style="color:var(--orange)">довіряють</span></h1>
+    <p class="team-hero-sub">Кожен — сертифікований спеціаліст з досвідом, який щиро любить свою справу та дітей.</p>
+    <div class="filter-bar" role="group" aria-label="Фільтр за рівнем">
+      <button class="filter-pill active" type="button">Всі</button>
+      <button class="filter-pill" type="button">Starter · A1–A2</button>
+      <button class="filter-pill" type="button">Elementary · B1</button>
+      <button class="filter-pill" type="button">Intermediate · B2</button>
+      <button class="filter-pill" type="button">Advanced · C1–C2</button>
+      <button class="filter-pill" type="button">Cambridge Prep</button>
+    </div>
+  </div>
+</section>
+
+<section class="teachers-page-sec">
+  <div class="teach-page-g">
+
+    <!-- TEACHER 1 -->
+    <div class="flip-card reveal d1" tabindex="0" role="article" aria-label="Анна Коваленко — натисни для деталей">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <div class="tc-ava-wrap">👩‍🏫</div>
+          <div class="tc-page-name">Анна Коваленко</div>
+          <div class="tc-page-role">Cambridge Examiner · Старший викладач</div>
+          <div class="tc-certs">
+            <span class="cert-tag">Cambridge CELTA</span>
+            <span class="cert-tag">C2 Proficiency</span>
+            <span class="cert-tag">CAE / CPE</span>
+          </div>
+        </div>
+        <div class="flip-back">
+          <div class="back-title">Анна Коваленко</div>
+          <p class="back-bio">Офіційний Cambridge Examiner з 6-річним досвідом. Спеціалізація: підготовка до CAE та CPE. 100% успішних складань у студентів за останні 3 роки.</p>
+          <div class="back-tags">
+            <span class="back-tag">CAE prep</span>
+            <span class="back-tag">CPE prep</span>
+            <span class="back-tag">Business English</span>
+            <span class="back-tag">IELTS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TEACHER 2 -->
+    <div class="flip-card reveal d2" tabindex="0" role="article" aria-label="Олексій Петренко — натисни для деталей">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <div class="tc-ava-wrap teal">👨‍🏫</div>
+          <div class="tc-page-name">Олексій Петренко</div>
+          <div class="tc-page-role">Conversation Specialist · C1</div>
+          <div class="tc-certs">
+            <span class="cert-tag">IELTS 8.5</span>
+            <span class="cert-tag">TESOL</span>
+            <span class="cert-tag">B1 · B2</span>
+          </div>
+        </div>
+        <div class="flip-back">
+          <div class="back-title">Олексій Петренко</div>
+          <p class="back-bio">Фахівець з розмовної практики. 4 роки жив у Великій Британії. Веде розмовні клуби та підготовку до IELTS Speaking. Учні говорять — він слухає і виправляє.</p>
+          <div class="back-tags">
+            <span class="back-tag">Speaking clubs</span>
+            <span class="back-tag">IELTS</span>
+            <span class="back-tag">Teenagers</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TEACHER 3 -->
+    <div class="flip-card reveal d3" tabindex="0" role="article" aria-label="Марія Сидоренко — натисни для деталей">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <div class="tc-ava-wrap yellow">👩‍🎓</div>
+          <div class="tc-page-name">Марія Сидоренко</div>
+          <div class="tc-page-role">Kids Specialist · 6–10 років</div>
+          <div class="tc-certs">
+            <span class="cert-tag">TESOL Certified</span>
+            <span class="cert-tag">Starters</span>
+            <span class="cert-tag">Movers</span>
+          </div>
+        </div>
+        <div class="flip-back">
+          <div class="back-title">Марія Сидоренко</div>
+          <p class="back-bio">Спеціаліст з навчання дітей 6–10 років. Ігрова методика, яка тримає увагу та дає результат. Автор матеріалів для Cambridge Starters та Movers.</p>
+          <div class="back-tags">
+            <span class="back-tag">Kids 6–10</span>
+            <span class="back-tag">Starters</span>
+            <span class="back-tag">Movers</span>
+            <span class="back-tag">Phonics</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PLACEHOLDER x5 -->
+    <div class="soon-card reveal d1"><span class="soon-ico">👤</span><div class="soon-label">Незабаром</div><div class="soon-sub">Новий викладач приєднується</div></div>
+    <div class="soon-card reveal d2"><span class="soon-ico">👤</span><div class="soon-label">Незабаром</div><div class="soon-sub">Новий викладач приєднується</div></div>
+    <div class="soon-card reveal d3"><span class="soon-ico">👤</span><div class="soon-label">Незабаром</div><div class="soon-sub">Новий викладач приєднується</div></div>
+    <div class="soon-card reveal d1"><span class="soon-ico">👤</span><div class="soon-label">Незабаром</div><div class="soon-sub">Новий викладач приєднується</div></div>
+    <div class="soon-card reveal d2"><span class="soon-ico">👤</span><div class="soon-label">Незабаром</div><div class="soon-sub">Новий викладач приєднується</div></div>
+
+  </div>
+</section>
+
+<section class="join-sec">
+  <div class="container">
+    <div class="join-inner reveal">
+      <h2 class="join-title">Хочеш стати частиною<br>команди Parrot School?</h2>
+      <p class="join-sub">Ми шукаємо натхненних викладачів, які люблять дітей та англійську мову. Гнучкий графік, гідна оплата, класний колектив.</p>
+      <div class="join-reqs">
+        <span class="req-pill">Cambridge CELTA або TESOL</span>
+        <span class="req-pill">Рівень B2+</span>
+        <span class="req-pill">Досвід з дітьми</span>
+        <span class="req-pill">Харків або онлайн</span>
+      </div>
+      <a href="https://forms.gle/7MGrs3fwNwgTndsA7" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Подати заявку →</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div style="max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem">
+    <a href="../index.html" class="ft-logo" style="text-decoration:none">🦜 <span>Parrot</span>School</a>
+    <div class="ft-copy">© 2026 Parrot School · Харків</div>
+    <div class="ft-made">Розроблено <a href="https://infiniteunion.com.ua" rel="noopener noreferrer" target="_blank">INFINITE UNION</a></div>
+  </div>
+</footer>
+
+<script defer src="../src/js/main.js"></script>
+<script defer>
+document.querySelectorAll('.filter-pill').forEach(function(pill){
+  pill.addEventListener('click',function(){
+    document.querySelectorAll('.filter-pill').forEach(function(p){p.classList.remove('active');});
+    pill.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>
