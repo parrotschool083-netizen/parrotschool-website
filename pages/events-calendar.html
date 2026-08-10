@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Календар подій Parrot School 2026 — Свята, Табір, Клуби | Харків</title>
+<meta name="description" content="Календар подій Parrot School Харків 2026: дитячі свята, Parrot Camp, розмовні клуби, Cambridge тестування. Дізнайтесь про всі заходи школи англійської мови.">
+<meta name="keywords" content="Parrot School події, школа англійської Харків заходи, дитячі свята Харків, Parrot Camp 2026, розмовний клуб Харків">
+<link rel="canonical" href="https://parrotschool.com.ua/events-calendar">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="shortcut icon" href="../favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../src/css/styles.css">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Календар подій Parrot School 2026">
+<meta property="og:description" content="Свята, Parrot Camp, розмовні клуби та Cambridge тестування. Всі події школи англійської мови у Харкові.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://parrotschool.com.ua/events-calendar">
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EventSeries",
+  "name": "Події Parrot School 2026",
+  "organizer": {
+    "@type": "EducationalOrganization",
+    "name": "Parrot School",
+    "address": {"@type": "PostalAddress", "addressLocality": "Харків", "addressCountry": "UA"}
+  },
+  "url": "https://parrotschool.com.ua/events-calendar"
+}
+</script>
+
+<style>
+/* ── HERO ── */
+.cal-hero {
+  min-height: 80vh;
+  background: linear-gradient(155deg, #080814 0%, #0f0f22 45%, #0a1a14 100%);
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden; text-align: center;
+  padding: 8rem 2rem 5rem;
+}
+.cal-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 15% 60%, rgba(240,101,26,.13) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 25%, rgba(18,184,160,.10) 0%, transparent 55%),
+    radial-gradient(ellipse at 50% 90%, rgba(255,212,59,.06) 0%, transparent 50%);
+}
+.floating-icons {
+  position: absolute; inset: 0; pointer-events: none; overflow: hidden;
+}
+.fi {
+  position: absolute; font-size: 2rem; opacity: .07;
+  animation: fi-float ease-in-out infinite;
+}
+.fi:nth-child(1){top:12%;left:8%;animation-duration:6s;}
+.fi:nth-child(2){top:25%;left:82%;animation-duration:7.5s;animation-delay:1s;}
+.fi:nth-child(3){top:60%;left:5%;animation-duration:5.5s;animation-delay:2s;}
+.fi:nth-child(4){top:70%;left:90%;animation-duration:8s;animation-delay:.5s;}
+.fi:nth-child(5){top:40%;left:50%;animation-duration:6.5s;animation-delay:1.5s;}
+.fi:nth-child(6){top:80%;left:35%;animation-duration:7s;animation-delay:3s;}
+@keyframes fi-float {
+  0%,100%{transform:translateY(0) rotate(0deg);}
+  50%{transform:translateY(-18px) rotate(8deg);}
+}
+.cal-badge {
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15);
+  border-radius: 50px; padding: .4rem 1.2rem;
+  font-size: .72rem; font-weight: 800; letter-spacing: .1em;
+  text-transform: uppercase; margin-bottom: 1.8rem;
+  animation: fade-up .7s ease both;
+  color: var(--yellow);
+}
+.cal-hero-title {
+  font-family: var(--font-d); font-weight: 900;
+  font-size: clamp(2.8rem, 8vw, 7rem);
+  line-height: .95; letter-spacing: -.04em;
+  margin-bottom: 1.5rem;
+  animation: fade-up .7s ease .15s both;
+}
+.cal-hero-title span { color: var(--orange); }
+.cal-hero-sub {
+  font-size: 1.05rem; color: rgba(255,255,255,.65);
+  max-width: 520px; margin: 0 auto 2.5rem;
+  line-height: 1.75;
+  animation: fade-up .7s ease .3s both;
+}
+.cal-hero-stats {
+  display: flex; gap: 2.5rem; justify-content: center;
+  flex-wrap: wrap; margin-bottom: 3rem;
+  animation: fade-up .7s ease .45s both;
+}
+.chs { text-align: center; }
+.chs-n {
+  font-family: var(--font-d); font-size: 2rem; font-weight: 900;
+  color: var(--teal); line-height: 1;
+}
+.chs-l { font-size: .78rem; color: rgba(255,255,255,.5); font-weight: 600; margin-top: .25rem; }
+.cal-hero-btns { animation: fade-up .7s ease .6s both; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+/* ── YEAR TIMELINE ── */
+.timeline-sec {
+  background: var(--dark); padding: 7rem 2rem;
+}
+.tl-wrap { max-width: 960px; margin: 0 auto; }
+.tl-label {
+  display: flex; align-items: center; gap: 1rem;
+  font-family: var(--font-d); font-size: .75rem; font-weight: 800;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: rgba(255,255,255,.35); margin-bottom: 4rem;
+}
+.tl-label::before, .tl-label::after {
+  content: ''; flex: 1; height: 1px;
+  background: rgba(255,255,255,.08);
+}
+.tl-months { display: flex; flex-direction: column; gap: 0; position: relative; }
+.tl-months::before {
+  content: ''; position: absolute;
+  left: 120px; top: 0; bottom: 0; width: 2px;
+  background: linear-gradient(180deg, transparent, rgba(240,101,26,.4) 10%, rgba(18,184,160,.4) 90%, transparent);
+}
+.tl-row { display: flex; gap: 0; position: relative; }
+.tl-month-col {
+  width: 120px; flex-shrink: 0;
+  padding: 1.5rem 1.5rem 1.5rem 0;
+  display: flex; align-items: flex-start; justify-content: flex-end;
+}
+.tl-month-name {
+  font-family: var(--font-d); font-size: .7rem; font-weight: 800;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: rgba(255,255,255,.3);
+  padding-top: .4rem;
+}
+.tl-month-name.active { color: var(--orange); }
+.tl-dot {
+  position: absolute; left: 112px;
+  top: 1.9rem; width: 18px; height: 18px;
+  border-radius: 50%; background: var(--dark);
+  border: 2px solid rgba(255,255,255,.15);
+  z-index: 2; transition: all .3s;
+}
+.tl-dot.has-event {
+  border-color: var(--orange);
+  background: var(--orange);
+  box-shadow: 0 0 12px rgba(240,101,26,.5);
+}
+.tl-dot.teal { border-color: var(--teal); background: var(--teal); box-shadow: 0 0 12px rgba(18,184,160,.5); }
+.tl-dot.yellow { border-color: var(--yellow); background: var(--yellow); box-shadow: 0 0 12px rgba(255,212,59,.5); }
+.tl-events { flex: 1; padding: 1.5rem 0 1.5rem 2.5rem; display: flex; flex-direction: column; gap: .75rem; }
+.tl-empty { padding: 1.5rem 0 1.5rem 2.5rem; }
+.tl-event-card {
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: var(--r-md);
+  padding: 1rem 1.4rem;
+  display: flex; align-items: center; gap: 1rem;
+  transition: transform .35s var(--ease), border-color .3s, background .3s;
+  cursor: default;
+}
+.tl-event-card:hover { transform: translateX(6px); border-color: rgba(240,101,26,.25); background: rgba(255,255,255,.04); }
+.tl-event-card.camp { border-left: 3px solid var(--teal); }
+.tl-event-card.holiday { border-left: 3px solid var(--orange); }
+.tl-event-card.cambridge { border-left: 3px solid var(--yellow); }
+.tl-event-card.club { border-left: 3px solid rgba(255,255,255,.25); }
+.tl-event-ico { font-size: 1.6rem; flex-shrink: 0; width: 2.4rem; text-align: center; }
+.tl-event-body { flex: 1; }
+.tl-event-name { font-family: var(--font-d); font-size: .88rem; font-weight: 700; margin-bottom: .15rem; }
+.tl-event-desc { font-size: .78rem; color: var(--muted); line-height: 1.5; }
+.tl-event-date {
+  font-family: var(--font-d); font-size: .72rem; font-weight: 800;
+  padding: .25rem .65rem; border-radius: 50px;
+  background: rgba(255,255,255,.06); color: rgba(255,255,255,.55);
+  white-space: nowrap; flex-shrink: 0;
+}
+.tl-event-card.camp .tl-event-date { background: rgba(18,184,160,.12); color: var(--teal); }
+.tl-event-card.holiday .tl-event-date { background: rgba(240,101,26,.12); color: var(--orange); }
+.tl-event-card.cambridge .tl-event-date { background: rgba(255,212,59,.1); color: var(--yellow); }
+
+/* ── CATEGORIES ── */
+.cat-sec { background: var(--mid); padding: 7rem 2rem; }
+.cat-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem; max-width: 1180px; margin: 0 auto;
+}
+.cat-card {
+  background: var(--card); border-radius: var(--r-lg);
+  padding: 2rem 1.5rem; text-align: center;
+  border: 1px solid rgba(255,255,255,.06);
+  position: relative; overflow: hidden;
+  transition: transform .4s var(--ease), border-color .3s;
+}
+.cat-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 3px;
+}
+.cat-card.orange::before { background: linear-gradient(90deg, var(--orange), #ff8c42); }
+.cat-card.teal::before { background: linear-gradient(90deg, var(--teal), #3dd9c4); }
+.cat-card.yellow::before { background: linear-gradient(90deg, var(--yellow), #ffe066); }
+.cat-card.purple::before { background: linear-gradient(90deg, #a855f7, #7c3aed); }
+.cat-card:hover { transform: translateY(-7px); border-color: rgba(240,101,26,.2); }
+.cat-ico { font-size: 2.8rem; margin-bottom: 1.2rem; display: block; }
+.cat-name { font-family: var(--font-d); font-size: .95rem; font-weight: 700; margin-bottom: .5rem; }
+.cat-desc { font-size: .82rem; color: var(--muted); line-height: 1.6; }
+.cat-count {
+  display: inline-block; margin-top: 1rem;
+  font-size: .7rem; font-weight: 800; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--orange);
+}
+
+/* ── UPCOMING ── */
+.upcoming-sec { background: var(--dark); padding: 7rem 2rem; }
+.upcoming-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1180px; margin: 0 auto; }
+.up-card {
+  background: var(--card); border-radius: var(--r-xl);
+  overflow: hidden; border: 1px solid rgba(255,255,255,.06);
+  transition: transform .4s var(--ease), box-shadow .4s;
+}
+.up-card:hover { transform: translateY(-8px); box-shadow: 0 24px 60px rgba(0,0,0,.4); }
+.up-card-header {
+  height: 160px; display: flex; align-items: center;
+  justify-content: center; position: relative; overflow: hidden;
+  font-size: 4rem;
+}
+.up-card-header.halloween { background: linear-gradient(135deg, #1a0a00, #2d1500); }
+.up-card-header.newyear { background: linear-gradient(135deg, #001a2d, #002a1f); }
+.up-card-header.spring { background: linear-gradient(135deg, #1a0d2e, #0d1a0d); }
+.up-card-body { padding: 1.8rem; }
+.up-card-label { font-size: .68rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--orange); margin-bottom: .5rem; }
+.up-card-title { font-family: var(--font-d); font-size: 1.1rem; font-weight: 700; margin-bottom: .7rem; }
+.up-card-desc { font-size: .85rem; color: var(--muted); line-height: 1.65; margin-bottom: 1.4rem; }
+.up-card-meta { display: flex; align-items: center; gap: .8rem; flex-wrap: wrap; }
+.up-meta-tag {
+  display: flex; align-items: center; gap: .35rem;
+  background: rgba(255,255,255,.06); border-radius: 50px;
+  padding: .25rem .75rem; font-size: .72rem; font-weight: 700;
+  color: rgba(255,255,255,.6);
+}
+
+/* ── CLUBS WEEKLY ── */
+.clubs-sec { background: var(--mid); padding: 7rem 2rem; }
+.clubs-week {
+  max-width: 860px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem;
+}
+.day-col {
+  background: var(--card); border-radius: var(--r-lg);
+  overflow: hidden; border: 1px solid rgba(255,255,255,.06);
+  transition: transform .35s var(--ease);
+}
+.day-col:hover { transform: translateY(-5px); }
+.day-header {
+  padding: .8rem; text-align: center;
+  background: rgba(255,255,255,.04);
+  font-family: var(--font-d); font-size: .7rem; font-weight: 800;
+  letter-spacing: .06em; text-transform: uppercase;
+  color: rgba(255,255,255,.5); border-bottom: 1px solid rgba(255,255,255,.05);
+}
+.day-header.active { background: rgba(240,101,26,.1); color: var(--orange); }
+.day-events { padding: .8rem; display: flex; flex-direction: column; gap: .5rem; }
+.day-ev {
+  background: rgba(255,255,255,.04); border-radius: var(--r-sm);
+  padding: .5rem .6rem; font-size: .72rem; line-height: 1.4;
+  border-left: 2px solid rgba(255,255,255,.15);
+}
+.day-ev.orange-acc { border-left-color: var(--orange); }
+.day-ev.teal-acc { border-left-color: var(--teal); }
+.day-ev .ev-time { font-weight: 800; color: rgba(255,255,255,.7); display: block; margin-bottom: .15rem; }
+.day-ev .ev-name { color: var(--muted); }
+
+/* ── CTA ── */
+.cal-cta {
+  background: linear-gradient(135deg, #0f1620 0%, #0a1f14 100%);
+  padding: 7rem 2rem; text-align: center; position: relative; overflow: hidden;
+}
+.cal-cta::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at center, rgba(240,101,26,.1) 0%, transparent 65%);
+}
+.cal-cta-ico { font-size: 4rem; margin-bottom: 1.5rem; display: block; animation: bounce 2s ease infinite; }
+@keyframes bounce { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);} }
+.cal-cta-title { font-family: var(--font-d); font-size: clamp(2rem,5vw,3.5rem); font-weight: 900; margin-bottom: 1rem; }
+.cal-cta-sub { font-size: 1rem; color: rgba(255,255,255,.6); max-width: 440px; margin: 0 auto 2.5rem; line-height: 1.7; }
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px) {
+  .cat-grid { grid-template-columns: 1fr 1fr; }
+  .upcoming-grid { grid-template-columns: 1fr 1fr; }
+  .clubs-week { grid-template-columns: 1fr 1fr; }
+}
+@media(max-width:600px) {
+  .tl-months::before { left: 80px; }
+  .tl-month-col { width: 80px; }
+  .tl-dot { left: 72px; }
+  .tl-events { padding-left: 1.5rem; }
+  .cat-grid { grid-template-columns: 1fr; }
+  .upcoming-grid { grid-template-columns: 1fr; }
+  .clubs-week { grid-template-columns: 1fr; }
+  .cal-hero-stats { gap: 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<a href="../index.html#main-content" class="skip-link">Перейти до основного контенту</a>
+
+<nav class="nav" role="navigation" aria-label="Навігація">
+  <a href="../index.html" class="nav-logo">🦜 <span>Parrot</span>School</a>
+  <ul class="nav-links" id="nav-links" role="list">
+    <li><a href="../index.html#locations">Локації</a></li>
+    <li><a href="../index.html#cambridge">Cambridge</a></li>
+    <li><a href="vykladachi.html">Викладачі</a></li>
+    <li><a href="tabir.html">Табір</a></li>
+    <li><a href="../index.html#pricing">Ціни</a></li>
+    <li><a href="https://t.me/SchoolParrot_bot" target="_blank" rel="noopener noreferrer">Telegram</a></li>
+    <li><a href="../index.html#pricing" class="nav-cta">Записатись</a></li>
+  </ul>
+  <button class="nav-burger" id="nav-burger" type="button" aria-label="Відкрити меню" aria-expanded="false" aria-controls="nav-links">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<main id="main-content">
+
+<!-- HERO -->
+<section class="cal-hero">
+  <div class="floating-icons" aria-hidden="true">
+    <span class="fi">🎉</span>
+    <span class="fi">🦜</span>
+    <span class="fi">🏕️</span>
+    <span class="fi">📅</span>
+    <span class="fi">🎭</span>
+    <span class="fi">⭐</span>
+  </div>
+  <div style="position:relative;z-index:1">
+    <div class="cal-badge">📅 Parrot School · 2026</div>
+    <h1 class="cal-hero-title">
+      Календар<br>
+      <span>подій</span>
+    </h1>
+    <p class="cal-hero-sub">
+      Свята, Parrot Camp, розмовні клуби та Cambridge тестування —
+      всі заходи школи в одному місці.
+    </p>
+    <div class="cal-hero-stats">
+      <div class="chs"><div class="chs-n">12+</div><div class="chs-l">подій на рік</div></div>
+      <div class="chs"><div class="chs-n">3</div><div class="chs-l">великих свята</div></div>
+      <div class="chs"><div class="chs-n">2</div><div class="chs-l">зміни Parrot Camp</div></div>
+      <div class="chs"><div class="chs-n">52</div><div class="chs-l">тижні розмовних клубів</div></div>
+    </div>
+    <div class="cal-hero-btns">
+      <a href="#timeline" class="btn btn-primary">📅 До календаря ↓</a>
+      <a href="https://t.me/parrot_school" class="btn btn-ghost" target="_blank" rel="noopener noreferrer" style="border-color:rgba(255,255,255,.3)">✈️ Слідкувати в Telegram</a>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="cat-sec" id="categories">
+  <div class="container">
+    <div class="reveal" style="text-align:center;margin-bottom:3.5rem">
+      <p class="s-eye">Типи заходів</p>
+      <h2 class="s-title">Що відбувається в Parrot School</h2>
+      <p class="s-sub">Від щотижневих клубів до великих святкових вистав</p>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-card orange reveal d1">
+        <span class="cat-ico">🎉</span>
+        <div class="cat-name">Свята та вистави</div>
+        <p class="cat-desc">Аніматори, фокусники, дискотека. Учні ставлять повноцінні театральні вистави англійською.</p>
+        <span class="cat-count">3 рази на рік</span>
+      </div>
+      <div class="cat-card teal reveal d2">
+        <span class="cat-ico">🏕️</span>
+        <div class="cat-name">Parrot Camp</div>
+        <p class="cat-desc">Дитячий англомовний табір. Повне занурення в мову, природа, нові друзі та пригоди.</p>
+        <span class="cat-count" style="color:var(--teal)">2 зміни на рік</span>
+      </div>
+      <div class="cat-card yellow reveal d3">
+        <span class="cat-ico">🎓</span>
+        <div class="cat-name">Cambridge тести</div>
+        <p class="cat-desc">Офіційне тестування рівня A1–C2 для отримання міжнародного сертифікату Cambridge.</p>
+        <span class="cat-count" style="color:var(--yellow)">2 рази на рік</span>
+      </div>
+      <div class="cat-card purple reveal d1">
+        <span class="cat-ico">💬</span>
+        <div class="cat-name">Розмовні клуби</div>
+        <p class="cat-desc">Щотижневі Speaking Clubs для різних вікових груп. Практика живої розмовної мови.</p>
+        <span class="cat-count" style="color:#a855f7">Щотижня</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline-sec" id="timeline">
+  <div class="container">
+    <div class="reveal" style="text-align:center;margin-bottom:3.5rem">
+      <p class="s-eye">Розклад на рік</p>
+      <h2 class="s-title">Календар 2026</h2>
+      <p class="s-sub">Всі ключові події школи по місяцях</p>
+    </div>
+    <div class="tl-wrap reveal">
+      <div class="tl-label">Navчальний рік Parrot School · 2026</div>
+      <div class="tl-months">
+
+        <!-- Вересень -->
+        <div class="tl-row">
+          <div class="tl-month-col"><div class="tl-month-name">Вер</div></div>
+          <div class="tl-dot has-event"></div>
+          <div class="tl-events">
+            <div class="tl-event-card holiday">
+              <div class="tl-event-ico">🎒</div>
+              <div class="tl-event-body">
+                <div class="tl-event-name">День знань — старт навчання</div>
+                <div class="tl-event-desc">Урочисте відкриття нового навчального року. Знайомство з новими учнями та викладачами.</div>
+              </div>
+              <div class="tl-event-date">1 вересня</div>
+            </div>
+            <div class="tl-event-card cambridge">
+              <div class="tl-event-ico">📝</div>
+              <div class="tl-event-body">
+                <div class="tl-event-name">Вхідне Cambridge тестування</div>
+                <div class="tl-event-desc">Визначення рівня для нових учнів. Розподіл по групах A1–C2.</div>
+              </div>
+              <div class="tl-event-date">Вересень</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Жовтень -->
+        <div class="tl-row">
+          <div class="tl-month-col"><div class="tl-month-name">Жов</div></div>
+          <div class="tl-dot has-event"></div>
+          <div class="tl-events">
+            <div class="tl-event-card holiday">
+              <div class="tl-event-ico">🎃</div>
+              <div class="tl-event-body">
+                <div class="tl-event-name">Halloween Party</div>
+                <div class="tl-event-desc">Грандіозна вечірка в костюмах. Конкурси, аніматори, театральна вистава учнів англійською мовою.</div>
+              </div>
+              <div class="tl-event-date">31 жовтня</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Листопад -->
+        <div class="tl-row">
+          <div class="tl-month-col"><div class="tl-month-name">Лис</div></div>
+          <div class="tl-dot teal"></div>
+          <div class="tl-events">
+            <div class="tl-event-card club">
+              <div class="tl-event-ico">💬</div>
+              <div class="tl-event-body">
+                <div class="tl-event-name">Speaking Club — осінній інтенсив</div>
+                <div class="tl-event-desc">Щотижневі розмовні клуби. Теми: подорожі, кіно, культура. Молодша та старша школа окремо.</div>
+              </div>
+              <div class="tl-event-date">Щотижня</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Грудень -->
+        <div class="tl-row">
+          <div class="tl-month-col"><div class="tl-month-name active">Гру</div></div>
+          <div class="tl-dot has-event"></div>
+          <div class="tl-events">
+            <div class="tl-event-card holiday">
+              <div class="tl-event-ico">🎄</div>
+              <div class="tl-event-body">
+                <div class="tl-event-name">Christmas & New Year Show</div>
+                <div class="tl-event-desc">Найбільше свято року. Новорічна вистава, Санта-Клаус, подарунки, дискотека для підлітків, солодкий стіл.</div>
+              </div>
+              <div class="tl-event-date">Грудень</div>
+            </div>
+            <div class="tl-event-card cambridge">
+              <div class="tl-event-ico">🎓</div>
+              <div class="tl-event-body">
+                <div class="tl-event-name">Проміжне Cambridge тестування</div>
+                <div class="tl-event-desc">Офіційний Cambridge тест для учнів, що готові до отримання сертифікату.</div>
+              </div>
+              <div class="tl-event-date">Грудень</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Лютий -->
+        <div class="tl-row">
+          <div class="tl-month-col"><div class="tl-month-name">Лют</div></div>
+          <div class="tl-dot teal"></div>
+          <div class="tl-events">
+            <div class="tl-event-card club">
+              <div class="tl-event-ico">💬</div>
+              <div class="tl-event-body">
+                <div class="tl-event-name">Valentine's Day Speaking Club</div>
+                <div class="tl-event-desc">Тематичний розмовний клуб до Дня Святого Валентина. Дискусії, ігри, практика мови.</div>
+              </div>
+              <div class="tl-event-date">14 лютого</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Березень -->
+        <div class="tl-row">
+          <div class="tl-month-col"><div class="tl-month-name">Бер</div></div>
+          <div class="tl-dot teal"></div>
+          <div class="tl-events">
+            <div class="tl-event-card club">
+              <div class="tl-event-ico">🌸</div>
+              <div class="tl-event-body">
+                <div class="tl-event-name">Весняні розмовні клуби</div>
+                <div class="tl-event-desc">Щотижневі Speaking Clubs з підвищеною інтенсивністю. Підготовка до Cambridge тестування.</div>
+              </div>
+              <div class="tl-event-date">Щотижня</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Квітень -->
+        <div class="tl-row">
+          <div class="tl-month-col"><div class="tl-month-name">Кві</div></div>
+          <div class="tl-dot has-event"></div>
+          <div class="tl-events">
+            <div class="tl-event-card holiday">
+              <div class="tl-event-ico">🌷</div>
+              <div class="tl-event-body">
+                <div class="tl-event-name">Spring Show — Весняна вистава</div>
+                <div class="tl-event-desc">Театральна постановка учнів. Щороку нова казка: Шрек, Холодне серце, Мадагаскар, Джуманджі.</div>
+              </div>
+              <div class="tl-event-date">Квітень</div>
+            </div>
+            <div class="tl-event-card cambridge">
+              <div class="tl-event-ico">🎓</div>
+              <div class="tl-event-body">
+                <div class="tl-event-name">Cambridge тестування — весна</div>
+                <div class="tl-event-desc">Офіційне тестування рівня. Сертифікати A1 (Starters), A2 (Movers), B1 (Flyers) та вище.</div>
+              </div>
+              <div class="tl-event-date">Квітень</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Червень -->
+        <div class="tl-row">
+          <div class="tl-month-col"><div class="tl-month-name">Чер</div></div>
+          <div class="tl-dot has-event"></div>
+          <div class="tl-events">
+            <div class="tl-event-card holiday">
+              <div class="tl-event-ico">🏆</div>
+              <div class="tl-event-body">
+                <div class="tl-event-name">Graduation Day — кінець року</div>
+                <div class="tl-event-desc">Урочиста церемонія вручення сертифікатів та дипломів Cambridge. Відзначаємо успіхи учнів.</div>
+              </div>
+              <div class="tl-event-date">Червень</div>
+            </div>
+            <div class="tl-event-card camp">
+              <div class="tl-event-ico">🏕️</div>
+              <div class="tl-event-body">
+                <div class="tl-event-name">Parrot Camp — Зміна 1</div>
+                <div class="tl-event-desc">10 днів повного занурення в англійську. Квести, творчі майстерні, нічне кіно, нові друзі.</div>
+              </div>
+              <div class="tl-event-date">28.06 – 05.07</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Серпень -->
+        <div class="tl-row">
+          <div class="tl-month-col"><div class="tl-month-name">Сер</div></div>
+          <div class="tl-dot teal"></div>
+          <div class="tl-events">
+            <div class="tl-event-card camp">
+              <div class="tl-event-ico">🏕️</div>
+              <div class="tl-event-body">
+                <div class="tl-event-name">Parrot Camp — Зміна 2</div>
+                <div class="tl-event-desc">Друга зміна літнього табору. Ті самі пригоди та англійська для тих, хто не потрапив у першу.</div>
+              </div>
+              <div class="tl-event-date">02.08 – 09.08</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UPCOMING (3 головних свята) -->
+<section class="upcoming-sec" id="upcoming">
+  <div class="container">
+    <div class="reveal" style="text-align:center;margin-bottom:3.5rem">
+      <p class="s-eye">Головні події</p>
+      <h2 class="s-title">Три свята, які пам'ятають роками</h2>
+      <p class="s-sub">Кожне — справжнє шоу. Не пропустіть</p>
+    </div>
+    <div class="upcoming-grid">
+      <div class="up-card reveal d1">
+        <div class="up-card-header halloween">🎃</div>
+        <div class="up-card-body">
+          <div class="up-card-label">Жовтень · Свято</div>
+          <div class="up-card-title">Halloween Party</div>
+          <p class="up-card-desc">Костюми, аніматори, жахи-жахи і театральна вистава учнів англійською. Щороку новий сценарій — діти чекають цей день весь рік.</p>
+          <div class="up-card-meta">
+            <span class="up-meta-tag">🎭 Вистава</span>
+            <span class="up-meta-tag">🎉 Аніматор</span>
+            <span class="up-meta-tag">📸 Фотозона</span>
+          </div>
+        </div>
+      </div>
+      <div class="up-card reveal d2">
+        <div class="up-card-header newyear">🎄</div>
+        <div class="up-card-body">
+          <div class="up-card-label">Грудень · Головне свято</div>
+          <div class="up-card-title">Christmas & New Year Show</div>
+          <p class="up-card-desc">Найбільша подія року. Новорічна вистава, Санта-Клаус, подарунки для кожного учня, дискотека для підлітків та солодкий стіл.</p>
+          <div class="up-card-meta">
+            <span class="up-meta-tag">🎅 Санта</span>
+            <span class="up-meta-tag">🎁 Подарунки</span>
+            <span class="up-meta-tag">🕺 Дискотека</span>
+          </div>
+        </div>
+      </div>
+      <div class="up-card reveal d3">
+        <div class="up-card-header spring">🌷</div>
+        <div class="up-card-body">
+          <div class="up-card-label">Квітень · Театр</div>
+          <div class="up-card-title">Spring Show — Весняна вистава</div>
+          <p class="up-card-desc">Щороку нова казка повністю англійською мовою. Шрек, Холодне серце, Мадагаскар, Джуманджі — наші учні ставлять справжні вистави.</p>
+          <div class="up-card-meta">
+            <span class="up-meta-tag">🎭 Театр</span>
+            <span class="up-meta-tag">🏆 Сертифікати</span>
+            <span class="up-meta-tag">🌸 Весна</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPEAKING CLUBS WEEKLY -->
+<section class="clubs-sec" id="clubs">
+  <div class="container">
+    <div class="reveal" style="text-align:center;margin-bottom:3.5rem">
+      <p class="s-eye">Щотижня · Speaking Club</p>
+      <h2 class="s-title">Розмовні клуби</h2>
+      <p class="s-sub">Живе спілкування англійською кожного тижня. Без граматики — тільки розмова</p>
+    </div>
+    <div class="clubs-week reveal">
+      <div class="day-col">
+        <div class="day-header">Пн</div>
+        <div class="day-events">
+          <div class="day-ev orange-acc">
+            <span class="ev-time">17:00</span>
+            <span class="ev-name">Junior Club (6–9 р.)</span>
+          </div>
+        </div>
+      </div>
+      <div class="day-col">
+        <div class="day-header">Вт</div>
+        <div class="day-events">
+          <div class="day-ev teal-acc">
+            <span class="ev-time">18:00</span>
+            <span class="ev-name">Teen Club (10–14 р.)</span>
+          </div>
+        </div>
+      </div>
+      <div class="day-col">
+        <div class="day-header active">Ср</div>
+        <div class="day-events">
+          <div class="day-ev orange-acc">
+            <span class="ev-time">17:00</span>
+            <span class="ev-name">Junior Club (6–9 р.)</span>
+          </div>
+          <div class="day-ev teal-acc">
+            <span class="ev-time">19:00</span>
+            <span class="ev-name">Senior Club (15+ р.)</span>
+          </div>
+        </div>
+      </div>
+      <div class="day-col">
+        <div class="day-header">Чт</div>
+        <div class="day-events">
+          <div class="day-ev teal-acc">
+            <span class="ev-time">18:00</span>
+            <span class="ev-name">Teen Club (10–14 р.)</span>
+          </div>
+        </div>
+      </div>
+      <div class="day-col">
+        <div class="day-header">Пт</div>
+        <div class="day-events">
+          <div class="day-ev orange-acc">
+            <span class="ev-time">17:30</span>
+            <span class="ev-name">Junior Club (6–9 р.)</span>
+          </div>
+          <div class="day-ev teal-acc">
+            <span class="ev-time">19:00</span>
+            <span class="ev-name">Senior Club (15+ р.)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal" style="text-align:center;margin-top:2.5rem">
+      <p style="color:rgba(255,255,255,.45);font-size:.85rem">Розклад може змінюватися. Актуальний розклад — в Telegram</p>
+      <a href="https://t.me/SchoolParrot_bot" class="btn btn-ghost" style="margin-top:1rem;border-color:rgba(255,255,255,.25)" target="_blank" rel="noopener noreferrer">✈️ Актуальний розклад в боті</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cal-cta">
+  <div style="position:relative;z-index:1">
+    <span class="cal-cta-ico">🦜</span>
+    <h2 class="cal-cta-title reveal">Не пропустіть жодної події</h2>
+    <p class="cal-cta-sub reveal">Підпишіться на Telegram-канал Parrot School — анонси, фото та нагадування про всі заходи.</p>
+    <div class="reveal" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+      <a href="https://t.me/parrot_school" class="btn btn-primary" target="_blank" rel="noopener noreferrer">✈️ Telegram-канал</a>
+      <a href="../index.html#pricing" class="btn btn-ghost" style="border-color:rgba(255,255,255,.35)">📝 Записатись на навчання</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div style="max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem">
+    <a href="../index.html" class="ft-logo" style="text-decoration:none">🦜 <span>Parrot</span>School</a>
+    <div class="ft-copy">© 2026 Parrot School · Харків</div>
+    <div class="ft-made">Розроблено <a href="https://infiniteunion.com.ua" rel="noopener noreferrer" target="_blank">INFINITE UNION</a></div>
+  </div>
+</footer>
+
+<script>
+// Reveal on scroll
+const revealEls = document.querySelectorAll('.reveal');
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
+}, { threshold: 0.12 });
+revealEls.forEach(el => revealObs.observe(el));
+
+// Nav burger
+const burger = document.getElementById('nav-burger');
+const navLinks = document.getElementById('nav-links');
+if(burger && navLinks) {
+  burger.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+  });
+}
+
+// Nav scroll
+const nav = document.querySelector('.nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+</script>
+</body>
+</html>
