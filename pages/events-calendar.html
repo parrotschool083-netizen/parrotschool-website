@@ -109,7 +109,7 @@
 .timeline-sec {
   background: var(--dark); padding: 7rem 2rem;
 }
-.tl-wrap { max-width: 960px; margin: 0 auto; }
+.tl-wrap { max-width: 960px; margin: 0 auto; padding: 0 1rem; }
 .tl-label {
   display: flex; align-items: center; gap: 1rem;
   font-family: var(--font-d); font-size: .75rem; font-weight: 800;
@@ -740,7 +740,7 @@
 // Reveal on scroll
 const revealEls = document.querySelectorAll('.reveal');
 const revealObs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
+  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('on'); e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
 }, { threshold: 0.12 });
 revealEls.forEach(el => revealObs.observe(el));
 
