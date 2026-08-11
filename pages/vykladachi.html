@@ -35,9 +35,10 @@
 .flip-front,.flip-back{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:var(--r-lg);padding:2rem;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
 .flip-front{background:var(--card);border:1px solid rgba(255,255,255,.07)}
 .flip-back{background:linear-gradient(135deg,rgba(240,101,26,.15),var(--card));border:1px solid rgba(240,101,26,.25);transform:rotateY(180deg);align-items:flex-start;text-align:left}
-.tc-ava-wrap{width:88px;height:88px;border-radius:50%;background:linear-gradient(135deg,var(--orange),#b84400);display:flex;align-items:center;justify-content:center;font-size:2.6rem;margin-bottom:1.2rem;border:3px solid rgba(255,255,255,.15)}
+.tc-ava-wrap{width:160px;height:160px;border-radius:50%;background:linear-gradient(135deg,var(--orange),#b84400);display:flex;align-items:center;justify-content:center;font-size:2.6rem;margin-bottom:1.4rem;border:3px solid rgba(255,255,255,.15)}
 .tc-ava-wrap.teal{background:linear-gradient(135deg,var(--teal),#0a8070)}
 .tc-ava-wrap.yellow{background:linear-gradient(135deg,#c49000,var(--yellow))}
+.tc-ava-wrap img{width:100%;height:100%;object-fit:cover;object-position:top;border-radius:50%;display:block}
 .tc-page-name{font-family:var(--font-d);font-size:1rem;font-weight:700;margin-bottom:.3rem}
 .tc-page-role{font-size:.78rem;color:var(--muted);margin-bottom:.75rem}
 .tc-certs{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:center}
@@ -115,89 +116,80 @@
 <section class="teachers-page-sec">
   <div class="teach-page-g">
 
-    <!-- TEACHER 1 -->
-    <div class="flip-card reveal d1" tabindex="0" role="article" aria-label="Анна Коваленко — натисни для деталей">
+    <!-- ЛЕСЯ -->
+    <div class="flip-card reveal d1" tabindex="0" role="article" aria-label="Леся — натисни для деталей">
       <div class="flip-inner">
         <div class="flip-front">
-          <div class="tc-ava-wrap">👩‍🏫</div>
-          <div class="tc-page-name">Анна Коваленко</div>
-          <div class="tc-page-role">Cambridge Examiner · Старший викладач</div>
-          <div class="tc-certs">
-            <span class="cert-tag">Cambridge CELTA</span>
-            <span class="cert-tag">C2 Proficiency</span>
-            <span class="cert-tag">CAE / CPE</span>
-          </div>
+          <div class="tc-ava-wrap"><img src="../assets/teachers/lesya.jpg" alt="Леся — викладач Parrot School"></div>
+          <div class="tc-page-name">Леся</div>
+          <div class="tc-page-role">Викладач англійської</div>
         </div>
         <div class="flip-back">
-          <div class="back-title">Анна Коваленко</div>
-          <p class="back-bio">Офіційний Cambridge Examiner з 6-річним досвідом. Спеціалізація: підготовка до CAE та CPE. 100% успішних складань у студентів за останні 3 роки.</p>
-          <div class="back-tags">
-            <span class="back-tag">CAE prep</span>
-            <span class="back-tag">CPE prep</span>
-            <span class="back-tag">Business English</span>
-            <span class="back-tag">IELTS</span>
-          </div>
+          <div class="back-title">Леся</div>
+          <p class="back-bio">«Робота вчителем для мене — це бачити, як "я не вмію" перетворюється на "у мене вийшло". Це про довіру, підтримку, розвиток і любов до того, що робиш.»</p>
         </div>
       </div>
     </div>
 
-    <!-- TEACHER 2 -->
-    <div class="flip-card reveal d2" tabindex="0" role="article" aria-label="Олексій Петренко — натисни для деталей">
+    <!-- ВЯЧЕСЛАВА -->
+    <div class="flip-card reveal d2" tabindex="0" role="article" aria-label="Вячеслава — натисни для деталей">
       <div class="flip-inner">
         <div class="flip-front">
-          <div class="tc-ava-wrap teal">👨‍🏫</div>
-          <div class="tc-page-name">Олексій Петренко</div>
-          <div class="tc-page-role">Conversation Specialist · C1</div>
-          <div class="tc-certs">
-            <span class="cert-tag">IELTS 8.5</span>
-            <span class="cert-tag">TESOL</span>
-            <span class="cert-tag">B1 · B2</span>
-          </div>
+          <div class="tc-ava-wrap teal"><img src="../assets/teachers/vyacheslava.jpg" alt="Вячеслава — викладач Parrot School"></div>
+          <div class="tc-page-name">Вячеслава</div>
+          <div class="tc-page-role">Викладач англійської</div>
         </div>
         <div class="flip-back">
-          <div class="back-title">Олексій Петренко</div>
-          <p class="back-bio">Фахівець з розмовної практики. 4 роки жив у Великій Британії. Веде розмовні клуби та підготовку до IELTS Speaking. Учні говорять — він слухає і виправляє.</p>
-          <div class="back-tags">
-            <span class="back-tag">Speaking clubs</span>
-            <span class="back-tag">IELTS</span>
-            <span class="back-tag">Teenagers</span>
-          </div>
+          <div class="back-title">Вячеслава</div>
+          <p class="back-bio">«Для мене робота — це можливість займатися улюбленою справою, розвиватися, ділитися знаннями та дарувати позитивні емоції. Особливо люблю моменти, коли бачу щирий інтерес і маленькі перемоги своїх учнів.»</p>
         </div>
       </div>
     </div>
 
-    <!-- TEACHER 3 -->
-    <div class="flip-card reveal d3" tabindex="0" role="article" aria-label="Марія Сидоренко — натисни для деталей">
+    <!-- КАТЯ -->
+    <div class="flip-card reveal d3" tabindex="0" role="article" aria-label="Катя — натисни для деталей">
       <div class="flip-inner">
         <div class="flip-front">
-          <div class="tc-ava-wrap yellow">👩‍🎓</div>
-          <div class="tc-page-name">Марія Сидоренко</div>
-          <div class="tc-page-role">Kids Specialist · 6–10 років</div>
-          <div class="tc-certs">
-            <span class="cert-tag">TESOL Certified</span>
-            <span class="cert-tag">Starters</span>
-            <span class="cert-tag">Movers</span>
-          </div>
+          <div class="tc-ava-wrap yellow"><img src="../assets/teachers/katya.jpg" alt="Катя — викладач Parrot School"></div>
+          <div class="tc-page-name">Катя</div>
+          <div class="tc-page-role">Викладач англійської</div>
         </div>
         <div class="flip-back">
-          <div class="back-title">Марія Сидоренко</div>
-          <p class="back-bio">Спеціаліст з навчання дітей 6–10 років. Ігрова методика, яка тримає увагу та дає результат. Автор матеріалів для Cambridge Starters та Movers.</p>
-          <div class="back-tags">
-            <span class="back-tag">Kids 6–10</span>
-            <span class="back-tag">Starters</span>
-            <span class="back-tag">Movers</span>
-            <span class="back-tag">Phonics</span>
-          </div>
+          <div class="back-title">Катя</div>
+          <p class="back-bio">«Для мене робота — це можливість розвиватися, спілкуватися з дітьми та бачити результат своєї праці. Мені подобається допомагати учням вивчати англійську й бачити їхній прогрес.»</p>
         </div>
       </div>
     </div>
 
-    <!-- PLACEHOLDER x5 -->
-    <div class="soon-card reveal d1"><span class="soon-ico">👤</span><div class="soon-label">Незабаром</div><div class="soon-sub">Новий викладач приєднується</div></div>
-    <div class="soon-card reveal d2"><span class="soon-ico">👤</span><div class="soon-label">Незабаром</div><div class="soon-sub">Новий викладач приєднується</div></div>
-    <div class="soon-card reveal d3"><span class="soon-ico">👤</span><div class="soon-label">Незабаром</div><div class="soon-sub">Новий викладач приєднується</div></div>
-    <div class="soon-card reveal d1"><span class="soon-ico">👤</span><div class="soon-label">Незабаром</div><div class="soon-sub">Новий викладач приєднується</div></div>
-    <div class="soon-card reveal d2"><span class="soon-ico">👤</span><div class="soon-label">Незабаром</div><div class="soon-sub">Новий викладач приєднується</div></div>
+    <!-- ОЛЯ -->
+    <div class="flip-card reveal d1" tabindex="0" role="article" aria-label="Оля — натисни для деталей">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <div class="tc-ava-wrap"><img src="../assets/teachers/olya.jpg" alt="Оля — викладач Parrot School"></div>
+          <div class="tc-page-name">Оля</div>
+          <div class="tc-page-role">Викладач англійської</div>
+        </div>
+        <div class="flip-back">
+          <div class="back-title">Оля</div>
+          <p class="back-bio">«Моя робота — це насамперед про щирий коннект та підтримку учнів. Найголовніше — щоб учні не боялися зробити помилку, адже саме так ми вчимося чомусь новому.»</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ВОВА -->
+    <div class="flip-card reveal d2" tabindex="0" role="article" aria-label="Вова — натисни для деталей">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <div class="tc-ava-wrap teal"><img src="../assets/teachers/vova.jpg" alt="Вова — викладач Parrot School"></div>
+          <div class="tc-page-name">Вова</div>
+          <div class="tc-page-role">Викладач англійської</div>
+        </div>
+        <div class="flip-back">
+          <div class="back-title">Вова</div>
+          <p class="back-bio">«Для мене робота — це в першу чергу про жагу до прогресу. Найголовніше — створити середовище, в якому учні можуть комфортно досягати успіху.»</p>
+        </div>
+      </div>
+    </div>
 
   </div>
 </section>
