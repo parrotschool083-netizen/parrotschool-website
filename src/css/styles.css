@@ -290,6 +290,8 @@ body{font-family:var(--font-b);background:var(--dark);color:var(--white);overflo
   .mot-g{grid-template-columns:1fr}
   .mc-big{grid-column:span 1;grid-template-columns:1fr}
   .clubs-in{grid-template-columns:1fr}
+  .clubs-txt{max-width:100%;overflow:hidden}
+  .clubs-txt *{max-width:100%}
   .clubs-arena{height:260px}
   .camp-card{grid-template-columns:1fr}
   .hol-g{grid-template-columns:repeat(2,1fr)}
@@ -375,7 +377,7 @@ body{font-family:var(--font-b);background:var(--dark);color:var(--white);overflo
 .orbit-ring-dec.r2{width:400px;height:400px;margin:-200px 0 0 -200px}
 .orbit-bubble{position:absolute;top:50%;left:50%;background:var(--card);border:1px solid rgba(255,255,255,.09);border-radius:50px;padding:.42rem .9rem;font-size:.73rem;font-weight:700;white-space:nowrap;color:var(--white);animation:orbit-rot 12s linear infinite;animation-delay:calc(var(--a) / 360 * -12s);transform-origin:0 0}
 @keyframes orbit-rot{from{transform:rotate(var(--a)) translateX(200px) rotate(calc(-1 * var(--a)))}to{transform:rotate(calc(var(--a) + 360deg)) translateX(200px) rotate(calc(-1 * (var(--a) + 360deg)))}}
-@media(max-width:768px){.orbit-wrap{width:320px;height:320px}}
+@media(max-width:768px){.orbit-wrap{width:320px;height:320px}.clubs-in{overflow:hidden}.clubs-in>div:first-child{transform:scale(0.68);transform-origin:center;margin:-72px auto !important}}
 
 /* MOT TABS */
 .mot-tabs{display:flex;gap:1rem;margin-bottom:2.5rem;flex-wrap:wrap}
@@ -541,10 +543,13 @@ body{font-family:var(--font-b);background:var(--dark);color:var(--white);overflo
   .mc-big-in{grid-template-columns:1fr}
   .mc-img{height:180px}
 
-  /* ORBIT */
+  /* ORBIT — ховаємо на мобілці, показуємо теги */
   .clubs-in{grid-template-columns:1fr}
-  .orbit-wrap{width:260px;height:260px;margin:0 auto}
-  .orb-lbl{font-size:.65rem;padding:.3rem .6rem}
+  .clubs-txt{max-width:100%;overflow:hidden}
+  .clubs-txt *{max-width:100%}
+  .clubs-sec{overflow:hidden}
+  #orbit-canvas{display:none!important}
+  .clubs-mobile-tags{display:flex!important}
 
   /* ТАБІР */
   .camp-card{grid-template-columns:1fr}
@@ -607,6 +612,6 @@ body{font-family:var(--font-b);background:var(--dark);color:var(--white);overflo
   .sg-n{font-size:1.4rem}
   .books-g{grid-template-columns:repeat(2,1fr)}
   .lvl-g{grid-template-columns:repeat(2,1fr)}
-  .orbit-wrap{width:230px;height:230px}
+  .orbit-wrap{display:none!important}
   .rev-card{min-width:180px;max-width:200px}
 }
