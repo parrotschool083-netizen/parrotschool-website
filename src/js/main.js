@@ -172,3 +172,18 @@ function switchBooksTab(tab){
   parrot.addEventListener('click', function(){ if(!talking) speak(); });
   setTimeout(speak, 2000);
 })();
+
+// Mobile parrot SVG resize
+function fixParrotMobile() {
+  var svg = document.getElementById('hero-parrot');
+  if (!svg) return;
+  if (window.innerWidth <= 768) {
+    svg.style.width = '200px';
+    svg.style.height = '260px';
+  } else {
+    svg.style.width = '340px';
+    svg.style.height = '420px';
+  }
+}
+fixParrotMobile();
+window.addEventListener('resize', fixParrotMobile);
