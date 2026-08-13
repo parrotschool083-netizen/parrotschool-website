@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Відгуки про Parrot School Харків — Батьки та учні про школу англійської</title>
-<meta name="description" content="Реальні відгуки батьків та учнів про школу англійської мови Parrot School у Харкові. 300+ задоволених сімей. Читайте відгуки та записуйтесь на безкоштовний урок.">
-<meta name="keywords" content="відгуки Parrot School, школа англійської Харків відгуки, відгуки батьків про школу англійської, Parrot School Харків відгуки учнів">
+<meta name="description" content="Реальні відгуки батьків та учнів про школу англійської мови Parrot School у Харкові. 300+ задоволених сімей. Читайте та записуйтесь на безкоштовний урок.">
+<meta name="keywords" content="відгуки Parrot School, школа англійської Харків відгуки, Parrot School Харків відгуки батьків">
 <link rel="canonical" href="https://parrotschool.com.ua/reviews">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,204 +20,230 @@
   "@context": "https://schema.org",
   "@type": "EducationalOrganization",
   "name": "Parrot School",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5",
-    "reviewCount": "300",
-    "bestRating": "5"
-  },
-  "address": {"@type": "PostalAddress", "addressLocality": "Харків", "addressCountry": "UA"}
+  "aggregateRating": {"@type":"AggregateRating","ratingValue":"5","reviewCount":"300","bestRating":"5"},
+  "address": {"@type":"PostalAddress","addressLocality":"Харків","addressCountry":"UA"}
 }
 </script>
 <style>
+body { background: var(--cream); color: var(--dark); }
+.rv-page { background: var(--cream); color: var(--dark); }
+
 .rv-hero {
-  min-height: 60vh;
-  background: linear-gradient(155deg, #080814 0%, #0f0f22 50%, #140814 100%);
-  display: flex; align-items: center; justify-content: center;
-  text-align: center; padding: 8rem 2rem 5rem; position: relative; overflow: hidden;
+  background: var(--cream);
+  padding: 8rem 2rem 4rem;
+  text-align: center;
+  position: relative; overflow: hidden;
 }
 .rv-hero::before {
   content: ''; position: absolute; inset: 0;
-  background:
-    radial-gradient(ellipse at 20% 50%, rgba(240,101,26,.12) 0%, transparent 55%),
-    radial-gradient(ellipse at 80% 30%, rgba(18,184,160,.08) 0%, transparent 55%);
+  background: radial-gradient(ellipse at 50% 0%, rgba(240,101,26,.07) 0%, transparent 65%);
 }
-.rv-stars { font-size: 2.5rem; margin-bottom: 1.5rem; letter-spacing: .2rem; animation: fade-up .6s ease both; }
-.rv-title { font-family: var(--font-d); font-size: clamp(2.5rem,7vw,5.5rem); font-weight: 900; line-height: .95; letter-spacing: -.04em; margin-bottom: 1.2rem; animation: fade-up .6s ease .15s both; }
-.rv-title span { color: var(--orange); }
-.rv-sub { font-size: 1rem; color: rgba(255,255,255,.6); max-width: 480px; margin: 0 auto 2.5rem; line-height: 1.75; animation: fade-up .6s ease .3s both; }
-.rv-counters { display: flex; gap: 3rem; justify-content: center; flex-wrap: wrap; animation: fade-up .6s ease .45s both; }
-.rv-c-n { font-family: var(--font-d); font-size: 2.2rem; font-weight: 900; color: var(--teal); }
-.rv-c-l { font-size: .78rem; color: rgba(255,255,255,.45); font-weight: 600; margin-top: .2rem; }
+.rv-stars { font-size: 2rem; margin-bottom: 1.2rem; letter-spacing: .15rem; }
+.rv-hero-title {
+  font-family: var(--font-d); font-weight: 900;
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  line-height: .95; letter-spacing: -.04em;
+  color: var(--dark); margin-bottom: 1rem;
+}
+.rv-hero-title span { color: var(--orange); }
+.rv-hero-sub { font-size: 1rem; color: rgba(12,12,20,.55); max-width: 480px; margin: 0 auto 2.5rem; line-height: 1.75; }
+.rv-counters { display: flex; gap: 3rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem; }
+.rv-c { text-align: center; }
+.rv-c-n { font-family: var(--font-d); font-size: 2rem; font-weight: 900; color: var(--orange); }
+.rv-c-l { font-size: .75rem; color: rgba(12,12,20,.45); font-weight: 700; margin-top: .15rem; letter-spacing: .04em; text-transform: uppercase; }
 
-/* REVIEW CARDS */
-.reviews-sec { background: var(--dark); padding: 6rem 2rem; }
-.reviews-masonry {
-  columns: 3; column-gap: 1.5rem;
-  max-width: 1180px; margin: 0 auto;
-}
+/* REVIEW CARDS — масонрі в стилі сторінки */
+.rv-section { background: var(--cream); padding: 2rem 2rem 5rem; }
+.rv-masonry { columns: 3; column-gap: 1.5rem; max-width: 1180px; margin: 0 auto; }
 .rv-card {
   break-inside: avoid; margin-bottom: 1.5rem;
-  background: var(--card); border-radius: 20px;
-  padding: 1.8rem; border: 1px solid rgba(255,255,255,.06);
-  transition: transform .35s var(--ease), border-color .3s;
+  background: #fff; border-radius: 20px;
+  padding: 1.8rem; border: 1.5px dashed rgba(12,12,20,.1);
+  transition: border-color .3s, transform .35s;
 }
-.rv-card:hover { transform: translateY(-5px); border-color: rgba(240,101,26,.2); }
-.rv-card-stars { color: #FFD43B; font-size: 1rem; margin-bottom: 1rem; letter-spacing: .1rem; }
-.rv-card-text { font-size: .92rem; line-height: 1.75; color: rgba(255,255,255,.8); margin-bottom: 1.2rem; font-style: italic; }
+.rv-card:hover { border-color: rgba(240,101,26,.35); transform: translateY(-4px); }
+.rv-card.featured { border-style: solid; border-color: rgba(240,101,26,.25); }
+.rv-card-stars { color: #f59e0b; font-size: .95rem; margin-bottom: .9rem; letter-spacing: .1rem; }
+.rv-card-text { font-size: .92rem; line-height: 1.75; color: rgba(12,12,20,.75); margin-bottom: 1.2rem; font-style: italic; }
 .rv-card-author { display: flex; align-items: center; gap: .75rem; }
-.rv-card-ava { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--orange), #ff8c42); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
-.rv-card-name { font-family: var(--font-d); font-size: .82rem; font-weight: 700; }
-.rv-card-role { font-size: .72rem; color: var(--muted); margin-top: .1rem; }
-.rv-card.featured { border-color: rgba(240,101,26,.3); background: linear-gradient(135deg, rgba(240,101,26,.06), rgba(18,184,160,.04)); }
+.rv-card-ava { width: 38px; height: 38px; border-radius: 50%; background: linear-gradient(135deg,var(--orange),#ff8c42); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+.rv-card-name { font-family: var(--font-d); font-size: .8rem; font-weight: 700; color: var(--dark); }
+.rv-card-role { font-size: .7rem; color: rgba(12,12,20,.45); margin-top: .1rem; }
 
-/* INSTAGRAM CTA */
-.insta-cta-sec { background: var(--mid); padding: 6rem 2rem; text-align: center; }
-.insta-cta-ico { font-size: 4rem; margin-bottom: 1.2rem; display: block; }
-.insta-cta-title { font-family: var(--font-d); font-size: clamp(1.8rem,4vw,3rem); font-weight: 900; margin-bottom: 1rem; }
-.insta-cta-sub { color: rgba(255,255,255,.55); max-width: 440px; margin: 0 auto 2rem; line-height: 1.7; }
+/* INSTAGRAM BLOCK — такий самий як на головній */
+.rv-insta { background: var(--cream); padding: 0 2rem 5rem; }
+.rv-insta-inner { max-width: 1180px; margin: 0 auto; }
+.rv-insta-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-bottom: 2rem; }
+.rv-insta-ph {
+  background: #fff; border-radius: var(--r-md); aspect-ratio: 1;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: .5rem; font-size: .8rem; color: rgba(12,12,20,.4);
+  border: 2px dashed rgba(12,12,20,.1); transition: border-color .3s;
+}
+.rv-insta-ph span:first-child { font-size: 2rem; }
+.rv-insta-ph:hover { border-color: rgba(240,101,26,.3); }
 
-@media(max-width:900px){ .reviews-masonry{ columns:2; } }
-@media(max-width:580px){ .reviews-masonry{ columns:1; } .rv-counters{ gap:1.5rem; } }
+/* CTA */
+.rv-cta { background: var(--orange); padding: 5rem 2rem; text-align: center; }
+.rv-cta-title { font-family: var(--font-d); font-size: clamp(1.8rem,4vw,3rem); font-weight: 900; color: #fff; margin-bottom: .8rem; }
+.rv-cta-sub { color: rgba(255,255,255,.8); max-width: 400px; margin: 0 auto 2rem; line-height: 1.7; }
+
+/* Footer light */
+.footer { background: var(--dark); }
+
+@media(max-width:900px){ .rv-masonry{ columns:2; } .rv-insta-grid{ grid-template-columns:repeat(2,1fr); } }
+@media(max-width:580px){ .rv-masonry{ columns:1; } .rv-counters{ gap:1.5rem; } }
 </style>
 </head>
-<body>
+<body class="rv-page">
 
 <a href="../index.html#main-content" class="skip-link">Перейти до основного контенту</a>
 
-<nav class="nav" role="navigation">
-  <a href="../index.html" class="nav-logo">🦜 <span>Parrot</span>School</a>
+<nav class="nav scrolled" role="navigation" style="background:rgba(255,248,242,.95);backdrop-filter:blur(12px)">
+  <a href="../index.html" class="nav-logo" style="color:var(--dark)">🦜 <span>Parrot</span>School</a>
   <ul class="nav-links" id="nav-links" role="list">
-    <li><a href="../index.html#locations">Локації</a></li>
-    <li><a href="../index.html#cambridge">Cambridge</a></li>
-    <li><a href="vykladachi.html">Викладачі</a></li>
-    <li><a href="tabir.html">Табір</a></li>
-    <li><a href="../index.html#pricing">Ціни</a></li>
-    <li><a href="https://t.me/SchoolParrot_bot" target="_blank" rel="noopener noreferrer">Telegram</a></li>
+    <li><a href="../index.html#locations" style="color:var(--dark)">Локації</a></li>
+    <li><a href="../index.html#cambridge" style="color:var(--dark)">Cambridge</a></li>
+    <li><a href="vykladachi.html" style="color:var(--dark)">Викладачі</a></li>
+    <li><a href="tabir.html" style="color:var(--dark)">Табір</a></li>
+    <li><a href="../index.html#pricing" style="color:var(--dark)">Ціни</a></li>
+    <li><a href="https://t.me/SchoolParrot_bot" target="_blank" rel="noopener noreferrer" style="color:var(--dark)">Telegram</a></li>
     <li><a href="../index.html#pricing" class="nav-cta">Записатись</a></li>
   </ul>
   <button class="nav-burger" id="nav-burger" type="button" aria-label="Відкрити меню" aria-expanded="false" aria-controls="nav-links">
-    <span></span><span></span><span></span>
+    <span style="background:var(--dark)"></span><span style="background:var(--dark)"></span><span style="background:var(--dark)"></span>
   </button>
 </nav>
 
 <main id="main-content">
 
+<!-- HERO -->
 <section class="rv-hero">
   <div style="position:relative;z-index:1">
     <div class="rv-stars">⭐⭐⭐⭐⭐</div>
-    <h1 class="rv-title">Відгуки про<br><span>Parrot School</span></h1>
-    <p class="rv-sub">Реальні думки батьків та учнів. Без фільтрів — тільки щирі слова про навчання, викладачів та результати.</p>
+    <h1 class="rv-hero-title">Відгуки про<br><span>Parrot School</span></h1>
+    <p class="rv-hero-sub">Реальні думки батьків та учнів. Без фільтрів — тільки щирі слова про навчання, викладачів та результати.</p>
     <div class="rv-counters">
-      <div><div class="rv-c-n">300+</div><div class="rv-c-l">щасливих учнів</div></div>
-      <div><div class="rv-c-n">5.0</div><div class="rv-c-l">середній рейтинг</div></div>
-      <div><div class="rv-c-n">4 роки</div><div class="rv-c-l">на ринку Харкова</div></div>
-      <div><div class="rv-c-n">5</div><div class="rv-c-l">локацій у місті</div></div>
+      <div class="rv-c"><div class="rv-c-n">300+</div><div class="rv-c-l">щасливих учнів</div></div>
+      <div class="rv-c"><div class="rv-c-n">5.0 ★</div><div class="rv-c-l">середній рейтинг</div></div>
+      <div class="rv-c"><div class="rv-c-n">4 роки</div><div class="rv-c-l">на ринку Харкова</div></div>
+      <div class="rv-c"><div class="rv-c-n">5</div><div class="rv-c-l">локацій у місті</div></div>
+    </div>
+    <a href="https://www.instagram.com/parrot_school/" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)">
+      📸 Дивитись відгуки в Instagram →
+    </a>
+  </div>
+</section>
+
+<!-- ВІДГУКИ MASONRY -->
+<section class="rv-section">
+  <div style="text-align:center;margin-bottom:2.5rem">
+    <p class="s-eye" style="color:var(--orange)">Що кажуть батьки та учні</p>
+    <h2 style="font-family:var(--font-d);font-size:clamp(2rem,4vw,3rem);font-weight:900;color:var(--dark);letter-spacing:-.03em">Справжні відгуки</h2>
+  </div>
+  <div class="rv-masonry">
+    <div class="rv-card featured">
+      <div class="rv-card-stars">★★★★★</div>
+      <p class="rv-card-text">«Дитина ходить вже другий рік і прогрес просто вражає. Вона почала дивитися мультики англійською і навіть пояснює мені слова. Викладачі — золото, завжди на зв'язку в Telegram боті.»</p>
+      <div class="rv-card-author">
+        <div class="rv-card-ava">👩</div>
+        <div><div class="rv-card-name">Олена В.</div><div class="rv-card-role">Мама учениці, 8 років</div></div>
+      </div>
+    </div>
+    <div class="rv-card">
+      <div class="rv-card-stars">★★★★★</div>
+      <p class="rv-card-text">«Записали сина після того як він категорично відмовлявся вчити англійську. Зараз сам просить додаткові заняття. Методика реально працює.»</p>
+      <div class="rv-card-author">
+        <div class="rv-card-ava" style="background:linear-gradient(135deg,#12B8A0,#3dd9c4)">👨</div>
+        <div><div class="rv-card-name">Андрій К.</div><div class="rv-card-role">Тато учня, 10 років</div></div>
+      </div>
+    </div>
+    <div class="rv-card">
+      <div class="rv-card-stars">★★★★★</div>
+      <p class="rv-card-text">«Halloween Party — це окрема пісня. Дитина готувалася весь жовтень, вивчила свою роль. Вистава була на такому рівні, що ми всі плакали від гордості.»</p>
+      <div class="rv-card-author">
+        <div class="rv-card-ava">👩</div>
+        <div><div class="rv-card-name">Марина Д.</div><div class="rv-card-role">Мама учениці, 11 років</div></div>
+      </div>
+    </div>
+    <div class="rv-card featured">
+      <div class="rv-card-stars">★★★★★</div>
+      <p class="rv-card-text">«Після Parrot Camp дочка повернулась іншою людиною. Говорить англійською без сором'язливості, завела нових друзів. 10 днів — і такий результат!»</p>
+      <div class="rv-card-author">
+        <div class="rv-card-ava" style="background:linear-gradient(135deg,#FFD43B,#f0a500)">👩</div>
+        <div><div class="rv-card-name">Юлія С.</div><div class="rv-card-role">Мама учениці, 13 років</div></div>
+      </div>
+    </div>
+    <div class="rv-card">
+      <div class="rv-card-stars">★★★★★</div>
+      <p class="rv-card-text">«Cambridge тест здала з першого разу. Викладач готувала дуже детально, давала реальні формати завдань. Сертифікат вже у нас — B1!»</p>
+      <div class="rv-card-author">
+        <div class="rv-card-ava" style="background:linear-gradient(135deg,#7c3aed,#a855f7)">👧</div>
+        <div><div class="rv-card-name">Аліна Т.</div><div class="rv-card-role">Учениця, 15 років</div></div>
+      </div>
+    </div>
+    <div class="rv-card">
+      <div class="rv-card-stars">★★★★★</div>
+      <p class="rv-card-text">«Оцінки одразу в Telegram — не потрібно чекати щоденника. Бачу прогрес дитини в реальному часі. Викладачі завжди відповідають на питання.»</p>
+      <div class="rv-card-author">
+        <div class="rv-card-ava">👩</div>
+        <div><div class="rv-card-name">Наталія Р.</div><div class="rv-card-role">Мама учня, 9 років</div></div>
+      </div>
+    </div>
+    <div class="rv-card">
+      <div class="rv-card-stars">★★★★★</div>
+      <p class="rv-card-text">«Розмовний клуб — найкраще що є в школі. Дитина спочатку боялась говорити, а тепер веде дискусії і навіть виправляє мою вимову вдома.»</p>
+      <div class="rv-card-author">
+        <div class="rv-card-ava" style="background:linear-gradient(135deg,#12B8A0,#0d9488)">👨</div>
+        <div><div class="rv-card-name">Дмитро Л.</div><div class="rv-card-role">Тато учня, 12 років</div></div>
+      </div>
+    </div>
+    <div class="rv-card featured">
+      <div class="rv-card-stars">★★★★★</div>
+      <p class="rv-card-text">«Ходимо вже 3 роки. Викладачі дійсно люблять свою роботу — це відчувається. Parrot School завжди тримає рівень.»</p>
+      <div class="rv-card-author">
+        <div class="rv-card-ava" style="background:linear-gradient(135deg,var(--orange),#c0392b)">👩</div>
+        <div><div class="rv-card-name">Ірина М.</div><div class="rv-card-role">Мама учениці, 14 років</div></div>
+      </div>
+    </div>
+    <div class="rv-card">
+      <div class="rv-card-stars">★★★★★</div>
+      <p class="rv-card-text">«Перший безкоштовний урок одразу показав рівень школи. Жодного тиску, все по-людськи. Записались цього ж дня.»</p>
+      <div class="rv-card-author">
+        <div class="rv-card-ava">👨</div>
+        <div><div class="rv-card-name">Сергій Б.</div><div class="rv-card-role">Тато учениці, 7 років</div></div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="reviews-sec">
-  <div class="container">
-    <div class="reveal" style="text-align:center;margin-bottom:3.5rem">
-      <p class="s-eye">Що кажуть батьки та учні</p>
-      <h2 class="s-title">Справжні відгуки</h2>
-      <p class="s-sub">Кожен відгук — реальна людина, яка довірила нам свою дитину</p>
-    </div>
-    <div class="reviews-masonry reveal">
-
-      <div class="rv-card featured">
-        <div class="rv-card-stars">★★★★★</div>
-        <p class="rv-card-text">«Дитина ходить вже другий рік і прогрес просто вражає. Вона почала дивитися мультики англійською і навіть пояснює мені слова. Викладачі — золото, завжди на зв'язку в Telegram боті.»</p>
-        <div class="rv-card-author">
-          <div class="rv-card-ava">👩</div>
-          <div><div class="rv-card-name">Олена В.</div><div class="rv-card-role">Мама учениці, 8 років</div></div>
-        </div>
-      </div>
-
-      <div class="rv-card">
-        <div class="rv-card-stars">★★★★★</div>
-        <p class="rv-card-text">«Записали сина в Parrot School після того як він категорично відмовлявся вчити англійську. Зараз сам просить додаткові заняття. Методика реально працює.»</p>
-        <div class="rv-card-author">
-          <div class="rv-card-ava" style="background:linear-gradient(135deg,var(--teal),#3dd9c4)">👨</div>
-          <div><div class="rv-card-name">Андрій К.</div><div class="rv-card-role">Тато учня, 10 років</div></div>
-        </div>
-      </div>
-
-      <div class="rv-card">
-        <div class="rv-card-stars">★★★★★</div>
-        <p class="rv-card-text">«Halloween Party — це взагалі окрема пісня. Дитина готувалася весь жовтень, вивчила свою роль. Вистава була на такому рівні, що ми всі плакали від гордості.»</p>
-        <div class="rv-card-author">
-          <div class="rv-card-ava">👩</div>
-          <div><div class="rv-card-name">Марина Д.</div><div class="rv-card-role">Мама учениці, 11 років</div></div>
-        </div>
-      </div>
-
-      <div class="rv-card featured">
-        <div class="rv-card-stars">★★★★★</div>
-        <p class="rv-card-text">«Після Parrot Camp дочка повернулась іншою людиною. Говорить англійською без соромʼязливості, завела нових друзів з інших міст. 10 днів — і такий результат!»</p>
-        <div class="rv-card-author">
-          <div class="rv-card-ava" style="background:linear-gradient(135deg,#FFD43B,#f0a500)">👩</div>
-          <div><div class="rv-card-name">Юлія С.</div><div class="rv-card-role">Мама учениці, 13 років</div></div>
-        </div>
-      </div>
-
-      <div class="rv-card">
-        <div class="rv-card-stars">★★★★★</div>
-        <p class="rv-card-text">«Cambridge тест здала з першого разу. Викладач готувала дуже детально, давала реальні формати завдань. Сертифікат вже у нас на руках — B1!»</p>
-        <div class="rv-card-author">
-          <div class="rv-card-ava" style="background:linear-gradient(135deg,#7c3aed,#a855f7)">👧</div>
-          <div><div class="rv-card-name">Аліна Т.</div><div class="rv-card-role">Учениця, 15 років</div></div>
-        </div>
-      </div>
-
-      <div class="rv-card">
-        <div class="rv-card-stars">★★★★★</div>
-        <p class="rv-card-text">«Дуже зручна система — оцінки одразу в Telegram, не потрібно чекати щоденника. Бачу прогрес дитини в реальному часі. І викладачі завжди відповідають на питання.»</p>
-        <div class="rv-card-author">
-          <div class="rv-card-ava">👩</div>
-          <div><div class="rv-card-name">Наталія Р.</div><div class="rv-card-role">Мама учня, 9 років</div></div>
-        </div>
-      </div>
-
-      <div class="rv-card">
-        <div class="rv-card-stars">★★★★★</div>
-        <p class="rv-card-text">«Розмовний клуб — це найкраще що є в школі. Дитина спочатку боялась говорити, а тепер веде дискусії і навіть виправляє мою вимову вдома, хаха.»</p>
-        <div class="rv-card-author">
-          <div class="rv-card-ava" style="background:linear-gradient(135deg,var(--teal),#0d9488)">👨</div>
-          <div><div class="rv-card-name">Дмитро Л.</div><div class="rv-card-role">Тато учня, 12 років</div></div>
-        </div>
-      </div>
-
-      <div class="rv-card featured">
-        <div class="rv-card-stars">★★★★★</div>
-        <p class="rv-card-text">«Ходимо вже 3 роки. За цей час змінилось місто, ситуація в країні, але Parrot School завжди тримає рівень. Викладачі дійсно люблять свою роботу — це відчувається.»</p>
-        <div class="rv-card-author">
-          <div class="rv-card-ava" style="background:linear-gradient(135deg,var(--orange),#c0392b)">👩</div>
-          <div><div class="rv-card-name">Ірина М.</div><div class="rv-card-role">Мама учениці, 14 років</div></div>
-        </div>
-      </div>
-
-      <div class="rv-card">
-        <div class="rv-card-stars">★★★★★</div>
-        <p class="rv-card-text">«Приємно вражені підходом. Перший безкоштовний урок одразу показав рівень школи. Жодного тиску, все по-людськи. Записались цього ж дня.»</p>
-        <div class="rv-card-author">
-          <div class="rv-card-ava">👨</div>
-          <div><div class="rv-card-name">Сергій Б.</div><div class="rv-card-role">Тато учениці, 7 років</div></div>
-        </div>
-      </div>
-
+<!-- INSTAGRAM БЛОК — такий самий як на головній -->
+<section class="rv-insta">
+  <div class="rv-insta-inner">
+    <p class="s-eye" style="color:var(--orange);margin-bottom:1rem">Ще більше відгуків</p>
+    <h2 style="font-family:var(--font-d);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:900;color:var(--dark);margin-bottom:.75rem">Фото та відгуки в Instagram</h2>
+    <p style="color:rgba(12,12,20,.55);font-size:.95rem;margin-bottom:1.5rem">Реальні відгуки від батьків та учнів у нашому Instagram</p>
+    <a href="https://www.instagram.com/parrot_school/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-bottom:2rem;background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)">
+      📸 Дивитись відгуки в Instagram →
+    </a>
+    <div class="rv-insta-grid">
+      <div class="rv-insta-ph"><span>📸</span><span>Фото з Instagram</span></div>
+      <div class="rv-insta-ph"><span>📸</span><span>Фото з Instagram</span></div>
+      <div class="rv-insta-ph"><span>📸</span><span>Фото з Instagram</span></div>
+      <div class="rv-insta-ph"><span>📸</span><span>Фото з Instagram</span></div>
+      <div class="rv-insta-ph"><span>📸</span><span>Фото з Instagram</span></div>
+      <div class="rv-insta-ph"><span>📸</span><span>Фото з Instagram</span></div>
     </div>
   </div>
 </section>
 
-<section class="insta-cta-sec">
-  <span class="insta-cta-ico reveal">📸</span>
-  <h2 class="insta-cta-title reveal">Більше відгуків в Instagram</h2>
-  <p class="insta-cta-sub reveal">Сотні реальних відгуків від батьків та учнів у нашому акаунті. Підписуйтесь і дивіться шкільне життя зсередини.</p>
-  <div class="reveal" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
-    <a href="https://www.instagram.com/parrot_school/" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)">📸 Instagram Parrot School</a>
-    <a href="../index.html#pricing" class="btn btn-ghost" style="border-color:rgba(255,255,255,.3)">📝 Записатись на урок</a>
+<!-- CTA -->
+<section class="rv-cta">
+  <h2 class="rv-cta-title">Готові спробувати?</h2>
+  <p class="rv-cta-sub">Перший урок безкоштовно. Визначимо рівень і підберемо групу без зобов'язань.</p>
+  <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+    <a href="https://t.me/parrot_school" class="btn btn-white" target="_blank" rel="noopener noreferrer">✈️ Написати в Telegram</a>
+    <a href="../index.html#pricing" class="btn btn-ghost" style="border-color:rgba(255,255,255,.5);color:#fff">📋 Переглянути ціни</a>
   </div>
 </section>
 
@@ -232,12 +258,6 @@
 </footer>
 
 <script>
-const revealEls = document.querySelectorAll('.reveal');
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('on'); obs.unobserve(e.target); } });
-}, { threshold: 0.1 });
-revealEls.forEach(el => obs.observe(el));
-
 const burger = document.getElementById('nav-burger');
 const navLinks = document.getElementById('nav-links');
 if(burger && navLinks){
@@ -246,9 +266,6 @@ if(burger && navLinks){
     burger.setAttribute('aria-expanded', open);
   });
 }
-window.addEventListener('scroll', () => {
-  document.querySelector('.nav').classList.toggle('scrolled', window.scrollY > 40);
-}, { passive: true });
 </script>
 </body>
 </html>
