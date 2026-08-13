@@ -475,6 +475,8 @@ body{font-family:var(--font-b);background:var(--dark);color:var(--white);overflo
   /* СЕКЦІЇ */
   .section{padding:4rem 1.25rem}
   .container{padding:0 1.25rem}
+  /* Прибираємо зрізи clip-path на мобілці */
+  .stats-sec,.mot-sec,.camp-sec,.clubs-sec,.rev-sec,.price-sec,.cta-sec{clip-path:none!important;padding-bottom:4rem!important;padding-top:4rem!important}
 
   /* ЗАГОЛОВКИ */
   .s-title{font-size:clamp(1.8rem,7vw,2.8rem)}
