@@ -491,11 +491,18 @@ body{font-family:var(--font-b);background:var(--dark);color:var(--white);overflo
   .hero-actions{flex-direction:column;align-items:stretch;gap:.75rem}
   .hero-actions .btn{width:100%;justify-content:center;font-size:.9rem}
 
-  /* STATS — одна колонка щоб текст не обрізався */
-  .sg{grid-template-columns:1fr 1fr;gap:.75rem}
-  .sg-item{padding:1rem;min-width:0}
-  .sg-n{font-size:1.6rem}
-  .sg-l{font-size:.7rem;word-break:break-word}
+  /* STATS */
+  .sg{grid-template-columns:1fr 1fr;gap:.6rem}
+  .sc{padding:1rem .75rem;min-width:0;overflow:hidden}
+  .sc-num{font-size:clamp(1rem,4.5vw,1.6rem);word-break:break-word;overflow-wrap:break-word;line-height:1.1}
+  .sc-lbl{font-size:.7rem}
+  .sc-ico{margin-bottom:.5rem}
+  .sc-ico svg{width:32px!important;height:32px!important}
+  /* ЛОКАЦІЇ */
+  .loc-g{grid-template-columns:1fr!important;gap:.85rem}
+  .lc{padding:1.5rem 1.25rem}
+  .lc-name{font-size:.95rem}
+  .lc-addr{font-size:.82rem}
 
   /* WHY */
   .why-g{grid-template-columns:1fr}
