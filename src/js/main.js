@@ -40,15 +40,21 @@ document.querySelectorAll('a').forEach(function(a){
   var canvas=document.getElementById('orbit-canvas');
   if(!canvas)return;
   var ctx=canvas.getContext('2d');
-  var W=420,cx=W/2,cy=W/2,R=185;
+  var isMobile=window.innerWidth<=768;
+  var W=isMobile?window.innerWidth-30:420;
+  var R=isMobile?W*0.35:185;
+  canvas.width=W;canvas.height=W;
+  canvas.style.width=W+'px';canvas.style.height=W+'px';
+  var cx=W/2,cy=W/2;
   var labels=['🌍 World Events','🎬 Movies & Pop','🤖 AI & Tech','🎮 Gaming','✈️ Travel','🎵 Music & Art'];
   var colors=['rgba(18,184,160,.35)','rgba(255,212,59,.35)','rgba(240,101,26,.35)','rgba(255,255,255,.1)','rgba(18,184,160,.35)','rgba(255,212,59,.35)'];
   var textColors=['#12B8A0','#FFD43B','#F0651A','#fff','#12B8A0','#FFD43B'];
   var n=labels.length;
   var angle=0;
-  ctx.font='bold 13px Nunito,sans-serif';
+  var fs=isMobile?10:13;
+  ctx.font='bold '+fs+'px Nunito,sans-serif';
   function draw(){
-    ctx.clearRect(0,0,W,W);
+    ctx.clearRect(0,0,canvas.width,canvas.height);
     for(var i=0;i<n;i++){
       var a=angle+i*(Math.PI*2/n);
       var x=cx+R*Math.cos(a);
