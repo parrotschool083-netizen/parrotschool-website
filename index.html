@@ -517,20 +517,20 @@
         <div class="pc-name">Дуо</div><div class="pc-desc">Група на двох · Максимальна увага</div>
         <div class="pc-price">400₴</div><div class="pc-per">за годину · 8 занять на місяць</div>
         <ul class="pc-feats"><li>8 занять на місяць</li><li>Розмовний клуб включено</li><li>Telegram бот для батьків</li><li>Підготовка до Cambridge</li><li>Щомісячний прогрес-звіт</li><li>Система мотивації</li></ul>
-        <a href="#" class="btn btn-ghost" style="width:100%;justify-content:center;border-color:rgba(255,255,255,.2)">Записатись</a>
+        <a href="#" onclick="openForm(\'Запис на урок\');return false;" class="btn btn-ghost" style="width:100%;justify-content:center;border-color:rgba(255,255,255,.2)">Записатись</a>
       </div>
       <div class="pc feat reveal d2">
         <div class="pc-badge">🔥 Найпопулярніший</div>
         <div class="pc-name">Групові</div><div class="pc-desc">Мінігрупи · Максимум результату</div>
         <div class="pc-price">від 1&thinsp;700₴</div><div class="pc-per">за місяць · з підписанням оферти</div>
         <ul class="pc-feats"><li>8 занять на місяць</li><li>Розмовний клуб включено</li><li>Telegram бот для батьків</li><li>Підготовка до Cambridge</li><li>Щомісячний прогрес-звіт</li><li>Система мотивації</li></ul>
-        <a href="#" class="btn btn-primary" style="width:100%;justify-content:center">Безкоштовний урок</a>
+        <a href="#" onclick="openForm(\'Безкоштовний урок\');return false;" class="btn btn-primary" style="width:100%;justify-content:center">Безкоштовний урок</a>
       </div>
       <div class="pc reveal d3">
         <div class="pc-name">Індивідуально</div><div class="pc-desc">1 учень · Персональна програма</div>
         <div class="pc-price">600₴</div><div class="pc-per">за годину</div>
         <ul class="pc-feats"><li>Гнучкий розклад</li><li>Персональна програма</li><li>Cambridge прискорено</li><li>Telegram бот для батьків</li></ul>
-        <a href="#" class="btn btn-ghost" style="width:100%;justify-content:center;border-color:rgba(255,255,255,.2)">Записатись</a>
+        <a href="#" onclick="openForm(\'Запис на урок\');return false;" class="btn btn-ghost" style="width:100%;justify-content:center;border-color:rgba(255,255,255,.2)">Записатись</a>
       </div>
     </div>
   </div>
@@ -589,5 +589,70 @@ function hwGoTo(i) {
   hwUpdate();
 }
 </script>
+
+<!-- MODAL ФОРМА ЗАПИСУ -->
+<div id="form-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.7);backdrop-filter:blur(6px);align-items:center;justify-content:center">
+  <div style="background:#16162a;border-radius:24px;padding:2.5rem;width:90%;max-width:480px;position:relative;border:1px solid rgba(255,255,255,.1)">
+    <button onclick="closeForm()" style="position:absolute;top:1rem;right:1.2rem;background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer">×</button>
+    <h3 style="font-family:var(--font-d);font-size:1.4rem;font-weight:900;margin-bottom:.5rem">Записатись на урок</h3>
+    <p style="color:rgba(255,255,255,.5);font-size:.88rem;margin-bottom:1.8rem">Перший урок — безкоштовно. Передзвонимо протягом 1 години.</p>
+    <div id="form-success" style="display:none;text-align:center;padding:2rem 0">
+      <div style="font-size:3rem">🦜</div>
+      <div style="font-family:var(--font-d);font-size:1.2rem;font-weight:700;margin-top:1rem">Заявку прийнято!</div>
+      <div style="color:rgba(255,255,255,.5);margin-top:.5rem">Ми зателефонуємо вам найближчим часом</div>
+    </div>
+    <form id="enroll-form" onsubmit="submitForm(event)">
+      <div style="margin-bottom:1rem">
+        <input id="f-name" type="text" placeholder="Ваше ім'я" required style="width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:.85rem 1.1rem;color:#fff;font-size:.95rem;outline:none;box-sizing:border-box">
+      </div>
+      <div style="margin-bottom:1rem">
+        <input id="f-phone" type="tel" placeholder="Номер телефону" required style="width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:.85rem 1.1rem;color:#fff;font-size:.95rem;outline:none;box-sizing:border-box">
+      </div>
+      <div style="margin-bottom:1.5rem">
+        <input id="f-age" type="text" placeholder="Вік дитини" style="width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:.85rem 1.1rem;color:#fff;font-size:.95rem;outline:none;box-sizing:border-box">
+      </div>
+      <button type="submit" id="f-submit" style="width:100%;background:var(--orange);border:none;border-radius:50px;padding:1rem;color:#fff;font-family:var(--font-d);font-size:.95rem;font-weight:700;cursor:pointer">Записатись →</button>
+    </form>
+  </div>
+</div>
+
+<script>
+var BOT_URL = "https://adminbot-production-54ee.up.railway.app/form";
+
+function openForm(type) {
+  document.getElementById("form-modal").style.display = "flex";
+  document.getElementById("form-modal").dataset.type = type || "Запис на урок";
+  document.getElementById("enroll-form").style.display = "block";
+  document.getElementById("form-success").style.display = "none";
+  document.body.style.overflow = "hidden";
+}
+function closeForm() {
+  document.getElementById("form-modal").style.display = "none";
+  document.body.style.overflow = "";
+}
+document.getElementById("form-modal").addEventListener("click", function(e) {
+  if (e.target === this) closeForm();
+});
+async function submitForm(e) {
+  e.preventDefault();
+  var btn = document.getElementById("f-submit");
+  btn.textContent = "Відправляємо...";
+  btn.disabled = true;
+  var data = {
+    secret: "parrot2026",
+    type: document.getElementById("form-modal").dataset.type || "Запис на урок",
+    name: document.getElementById("f-name").value,
+    phone: document.getElementById("f-phone").value,
+    child_age: document.getElementById("f-age").value,
+    message: ""
+  };
+  try {
+    await fetch(BOT_URL, {method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(data)});
+  } catch(err) {}
+  document.getElementById("enroll-form").style.display = "none";
+  document.getElementById("form-success").style.display = "block";
+}
+</script>
+
 </body>
 </html>
